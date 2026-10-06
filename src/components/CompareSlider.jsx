@@ -10,7 +10,7 @@ export default function CompareSlider() {
   const calcPos = (clientX) => {
     if (!sliderRef.current) return;
     const rect = sliderRef.current.getBoundingClientRect();
-    const x = Math.max(5, Math.min(95, ((clientX - rect.left) / rect.width) * 100));
+    const x = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
     setPos(x);
   };
 
@@ -24,7 +24,12 @@ export default function CompareSlider() {
     if (dragging) calcPos(e.clientX);
   };
 
-  const onPointerUp = () => setDragging(false);
+  const onPointerUp = (e) => {
+    setDragging(false);
+    try {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    } catch {}
+  };
 
   return (
     <section id="before-after" className="py-16 sm:py-24 bg-[#EEF1F1]/40 relative overflow-hidden">
@@ -47,42 +52,51 @@ export default function CompareSlider() {
                 onPointerMove={onPointerMove}
                 onPointerUp={onPointerUp}
               >
-                {/* After image (full width background) */}
-                <div className="absolute inset-0">
+                {/* 1. Base layer: Full White (After) image */}
+                <div className="absolute inset-0 select-none">
                   <img
-                    src={getAssetUrl('images/smile-compare.png')}
-                    alt="After smile makeover"
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: 'right center' }}
+                    src={getAssetUrl('images/smile-after.webp')}
+                    alt="After smile makeover - White teeth"
+                    className="w-full h-full object-cover object-center pointer-events-none select-none"
+                    draggable="false"
                   />
-                  <div className="absolute bottom-4 right-4 px-3.5 py-1 rounded-full text-xs font-bold text-white bg-[#03213B]/80 backdrop-blur-md uppercase tracking-wider shadow-sm">
+                  <div
+                    className={`absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-[#03213B]/85 backdrop-blur-md uppercase tracking-wider shadow-md pointer-events-none transition-opacity duration-200 ${
+                      pos > 88 ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  >
                     After
                   </div>
                 </div>
 
-                {/* Before image (clipped to slider position) */}
-                <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
+                {/* 2. Top layer: Full Yellow (Before) image clipped to slider position */}
+                <div
+                  className="absolute inset-0 select-none pointer-events-none"
+                  style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+                >
                   <img
-                    src={getAssetUrl('images/smile-compare.png')}
-                    alt="Before smile makeover"
-                    className="absolute inset-0 h-full object-cover"
-                    style={{ width: `${10000 / pos}%`, objectPosition: 'left center', maxWidth: 'none' }}
+                    src={getAssetUrl('images/smile-before.webp')}
+                    alt="Before smile makeover - Yellow teeth"
+                    className="w-full h-full object-cover object-center pointer-events-none select-none"
+                    draggable="false"
                   />
-                  {/* Subtle warm tint for realistic before-care demonstration */}
-                  <div className="absolute inset-0 bg-amber-900/25 mix-blend-multiply" />
-                  <div className="absolute bottom-4 left-4 px-3.5 py-1 rounded-full text-xs font-bold text-white bg-[#03213B]/80 backdrop-blur-md uppercase tracking-wider shadow-sm">
+                  <div
+                    className={`absolute bottom-4 left-4 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-[#03213B]/85 backdrop-blur-md uppercase tracking-wider shadow-md pointer-events-none transition-opacity duration-200 ${
+                      pos < 12 ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  >
                     Before
                   </div>
                 </div>
 
-                {/* Vertical Divider & Drag Handle */}
+                {/* 3. Vertical Divider & Drag Handle */}
                 <div
-                  className="absolute top-0 bottom-0 flex items-center justify-center pointer-events-none"
+                  className="absolute top-0 bottom-0 z-20 flex items-center justify-center pointer-events-none"
                   style={{ left: `${pos}%`, transform: 'translateX(-50%)' }}
                 >
-                  <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-white shadow-[0_0_8px_rgba(0,0,0,0.4)]" />
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white flex items-center justify-center shadow-[0_8px_25px_-4px_rgba(3,33,59,0.35)] border border-[#E5E8E8] text-[#03213B] z-10 transition-transform duration-200">
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[3px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.6)]" />
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white flex items-center justify-center shadow-[0_8px_25px_-4px_rgba(3,33,59,0.35)] border border-[#E5E8E8] text-[#03213B] z-10 transition-transform duration-150">
+                    <svg className="w-4 h-4 text-[#0284c7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="15 18 9 12 15 6" />
                       <polyline points="9 18 3 12 9 6" />
                     </svg>

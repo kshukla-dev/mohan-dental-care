@@ -50,7 +50,7 @@ export default function Hero({ _setActivePage }) {
       {/* ── MOBILE: Hero Image at top (clearly visible, no dark overlay) ── */}
       <div className="relative w-full h-[275px] sm:h-[330px] lg:hidden overflow-hidden bg-slate-100">
         <img
-          src={getAssetUrl('images/hero-desktop.jpg')}
+          src={getAssetUrl('images/hero-desktop.webp')}
           alt="Mohan Dental Care Clinic"
           className="w-full h-full object-cover object-[center_20%]"
         />
@@ -64,7 +64,7 @@ export default function Hero({ _setActivePage }) {
 
       {/* ── DESKTOP: Background image & subtle contrast gradient ── */}
       <img
-        src={getAssetUrl('images/hero-desktop.jpg')}
+        src={getAssetUrl('images/hero-desktop.webp')}
         alt="Mohan Dental Care Clinic"
         className="absolute inset-0 w-full h-full object-cover object-[center_35%] hidden lg:block pointer-events-none"
         style={{ zIndex: 0 }}

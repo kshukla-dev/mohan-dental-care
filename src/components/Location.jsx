@@ -103,7 +103,7 @@ export default function Location() {
           </div>
         </div>
 
-        {/* Right: Interactive Clinic Office Photo (office.png) & Map Switcher */}
+        {/* Right: Interactive Clinic Office Photo (office.webp) & Map Switcher */}
         <div ref={rightRef} className={`transition-all duration-700 ${rightVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
           <div className="rounded-3xl overflow-hidden border border-[#E5E8E8] shadow-[0_10px_35px_-10px_rgba(3,33,59,0.1)] bg-white p-3">
             {/* View Switcher Tabs */}
@@ -138,7 +138,7 @@ export default function Location() {
             {viewMode === 'office' ? (
               <div className="rounded-2xl overflow-hidden aspect-[4/3] relative bg-[#EEF1F1] group">
                 <img
-                  src={getAssetUrl('images/office.png')}
+                  src={getAssetUrl('images/office.webp')}
                   alt="Mohan Dental Care Clinic Office & Consultation Room"
                   className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                 />

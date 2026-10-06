@@ -2,12 +2,12 @@ import { useScrollReveal, useTilt, getAssetUrl } from '../utils';
 
 // ─── Gallery items with real images ─────────────────────────────────────────
 const GALLERY = [
-  { label: 'Doctor Consultation Office', img: 'images/office.png' },
-  { label: 'Reception & Waiting Lounge', img: 'images/reception.png' },
-  { label: 'Treatment Chair & Operatory', img: 'images/treatment.png' },
-  { label: 'Digital RVG X-Ray Room', img: 'images/xray.png' },
-  { label: 'Sterilization & Autoclave', img: 'images/sterilization.png' },
-  { label: 'Consultation Desk', img: 'images/office.png' },
+  { label: 'Doctor Consultation Office', img: 'images/office.webp' },
+  { label: 'Reception & Waiting Lounge', img: 'images/reception.webp' },
+  { label: 'Treatment Chair & Operatory', img: 'images/treatment.webp' },
+  { label: 'Digital RVG X-Ray Room', img: 'images/xray.webp' },
+  { label: 'Sterilization & Autoclave', img: 'images/sterilization.webp' },
+  { label: 'Consultation Desk', img: 'images/office.webp' },
 ];
 
 // ─── Doctor card with real photo ─────────────────────────────────────────────
