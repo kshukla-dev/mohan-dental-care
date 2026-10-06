@@ -25,13 +25,13 @@ function DoctorCard() {
         <div className="rounded-[18px] overflow-hidden aspect-[4/5] relative bg-gradient-to-b from-[#133A5B] to-[#03213B]">
           <img
             src={getAssetUrl('images/dr_p_r_rajwade.webp')}
-            alt="Dr. P. R. Rajwade, BDS"
+            alt="Dr. P. R. Rajwade"
             className="w-full h-full object-cover object-top"
           />
           {/* Gradient overlay at bottom for name */}
           <div className="absolute bottom-0 left-0 right-0 px-5 py-5 bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent">
             <p className="text-white font-display font-bold text-lg leading-tight">Dr. P. R. Rajwade</p>
-            <p className="text-[#BFA88F] text-xs font-semibold mt-0.5">BDS — Govt. Dental College, Raipur</p>
+            <p className="text-[#BFA88F] text-xs font-semibold mt-0.5">Govt. Dental College, Raipur</p>
           </div>
         </div>
 
@@ -50,8 +50,8 @@ function DoctorCard() {
             </svg>
           </div>
           <div>
-            <p className="text-[0.6rem] font-bold uppercase tracking-wide text-ink-700">Qualification</p>
-            <p className="text-[0.8rem] font-bold text-ink-950">BDS</p>
+            <p className="text-[0.6rem] font-bold uppercase tracking-wide text-ink-700">Role</p>
+            <p className="text-[0.8rem] font-bold text-ink-950">Dental Surgeon</p>
           </div>
         </div>
 
@@ -85,9 +85,8 @@ export function DoctorTeaser({ setActivePage }) {
         {/* Left: Editorial Image Presentation (5 cols) */}
         <div className="lg:col-span-5 flex justify-center">
           <div className="relative w-full max-w-[360px] sm:max-w-[390px]">
-            <div className={`rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-b from-[#133A5B] to-[#03213B] shadow-[0_20px_50px_-15px_rgba(3,33,59,0.15)] border border-[#E5E8E8] relative group transition-all duration-700 ease-out ${
-              visible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-[0.98] translate-y-4'
-            }`}>
+            <div className={`rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-b from-[#133A5B] to-[#03213B] shadow-[0_20px_50px_-15px_rgba(3,33,59,0.15)] border border-[#E5E8E8] relative group transition-all duration-700 ease-out ${visible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-[0.98] translate-y-4'
+              }`}>
               <img
                 src={getAssetUrl('images/dr_p_r_rajwade.webp')}
                 alt="Dr. P. R. Rajwade, Lead Dental Surgeon at Mohan Dental Care Clinic"
@@ -95,14 +94,13 @@ export function DoctorTeaser({ setActivePage }) {
               />
               <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-[#03213B] via-[#03213B]/80 to-transparent">
                 <span className="text-[#BFA88F] text-xs font-bold uppercase tracking-wider block">Lead Dental Surgeon</span>
-                <span className="text-white font-display font-bold text-lg">Dr. P. R. Rajwade, BDS</span>
+                <span className="text-white font-display font-bold text-lg">Dr. P. R. Rajwade</span>
               </div>
             </div>
 
             {/* Subtle floating badge */}
-            <div className={`absolute -bottom-4 right-4 bg-white rounded-full px-4 py-2 shadow-card border border-[#E5E8E8] flex items-center gap-2 text-xs font-bold text-[#03213B] transition-all duration-500 delay-300 ease-out ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-            }`}>
+            <div className={`absolute -bottom-4 right-4 bg-white rounded-full px-4 py-2 shadow-card border border-[#E5E8E8] flex items-center gap-2 text-xs font-bold text-[#03213B] transition-all duration-500 delay-300 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+              }`}>
               <span className="w-2 h-2 rounded-full bg-[#123b5d]" />
               CGDC Reg. 23/3989
             </div>
@@ -111,34 +109,29 @@ export function DoctorTeaser({ setActivePage }) {
 
         {/* Right: Editorial Content & Highlights (7 cols) */}
         <div className="lg:col-span-7 text-left">
-          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4 transition-all duration-500 ease-out ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-          }`}>
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4 transition-all duration-500 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}>
             <span className="w-1.5 h-1.5 rounded-full bg-[#123b5d]" />
             DEDICATED CLINICAL LEADERSHIP
           </div>
 
-          <h2 className={`font-display font-bold text-[clamp(1.85rem,3.2vw,2.5rem)] text-[#03213B] leading-tight mb-2 transition-all duration-600 delay-100 ease-out ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-          }`}>
+          <h2 className={`font-display font-bold text-[clamp(1.85rem,3.2vw,2.5rem)] text-[#03213B] leading-tight mb-2 transition-all duration-600 delay-100 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}>
             Meet Your Dentist
           </h2>
-          <p className={`text-[#123b5d] font-semibold text-[1.05rem] mb-5 transition-all duration-600 delay-150 ease-out ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-          }`}>
-            Dr. P. R. Rajwade, <span className="text-[#66737F] font-normal">B.D.S. (Govt. Dental College, Raipur)</span>
+          <p className={`text-[#123b5d] font-semibold text-[1.05rem] mb-5 transition-all duration-600 delay-150 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}>
+            Dr. P. R. Rajwade, <span className="text-[#66737F] font-normal">Govt. Dental College, Raipur</span>
           </p>
 
-          <p className={`text-[#66737F] text-[0.98rem] sm:text-[1.05rem] leading-relaxed mb-8 max-w-[56ch] transition-all duration-600 delay-200 ease-out ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-          }`}>
+          <p className={`text-[#66737F] text-[0.98rem] sm:text-[1.05rem] leading-relaxed mb-8 max-w-[56ch] transition-all duration-600 delay-200 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}>
             With extensive clinical experience in both restorative and cosmetic procedures, Dr. Rajwade is committed to making dentistry approachable, gentle, and transparent. Every consultation is structured to give you clarity, comfort, and long-term peace of mind.
           </p>
 
           {/* 3 Core Highlights */}
-          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 transition-all duration-600 delay-250 ease-out ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-          }`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 transition-all duration-600 delay-250 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}>
             <div className="p-3.5 rounded-xl bg-white border border-[#E5E8E8] shadow-[0_2px_10px_-4px_rgba(3,33,59,0.04)] hover:-translate-y-0.5 transition-transform duration-200">
               <div className="w-7 h-7 rounded-lg bg-[#E8F1F8] flex items-center justify-center text-[#123b5d] mb-2">
                 <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -172,9 +165,8 @@ export function DoctorTeaser({ setActivePage }) {
           </div>
 
           {/* Clinical & Hospital Experience */}
-          <div className={`mb-8 p-4 sm:p-5 rounded-2xl bg-white border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.04)] transition-all duration-600 delay-300 ease-out ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-          }`}>
+          <div className={`mb-8 p-4 sm:p-5 rounded-2xl bg-white border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.04)] transition-all duration-600 delay-300 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}>
             <h4 className="font-display font-bold text-xs uppercase tracking-wider text-[#03213B] mb-3 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#123b5d]" />
               Clinical &amp; Hospital Background
@@ -200,9 +192,8 @@ export function DoctorTeaser({ setActivePage }) {
           </div>
 
           {/* CTA */}
-          <div className={`transition-all duration-600 delay-350 ease-out ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-          }`}>
+          <div className={`transition-all duration-600 delay-350 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}>
             <button
               onClick={() => { setActivePage('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#03213B] hover:bg-[#133A5B] text-white font-bold text-[0.94rem] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 group"
@@ -222,7 +213,7 @@ export function AboutPage() {
   const [ref, visible] = useScrollReveal(0.05);
 
   const CREDS = [
-    { label: 'Qualification', value: 'BDS' },
+    { label: 'Role', value: 'Dental Surgeon' },
     { label: 'Registration', value: 'CGDC/G/23/3989' },
     { label: 'Focus', value: 'General & Cosmetic' },
     { label: 'College', value: 'Govt. Dental, Raipur' },
@@ -230,8 +221,8 @@ export function AboutPage() {
 
   const BIO = [
     'Dr. P. R. Rajwade completed a Bachelor of Dental Surgery at Government Dental College, Raipur, and is registered with the Chhattisgarh Dental Council under CGDC/G/23/3989.',
-    'At the Surajpur clinic, treatment covers routine care as well as more involved work — root canals, wisdom tooth surgery, jaw fractures, orthodontics and full smile makeovers — supported by digital RVG X-ray imaging and modern crown materials (Zirconia, EMAX, DMLS).',
-    'Our approach is straightforward: explain what\'s happening, offer the options that fit, and treat every patient — young or old — at an unhurried pace.',
+    'At the Surajpur clinic, treatment covers routine care as well as more involved work - root canals, wisdom tooth surgery, jaw fractures, orthodontics and full smile makeovers - supported by digital RVG X-ray imaging and modern crown materials (Zirconia, EMAX, DMLS).',
+    'Our approach is straightforward: explain what\'s happening, offer the options that fit, and treat every patient - young or old - at an unhurried pace.',
   ];
 
   return (
@@ -245,8 +236,8 @@ export function AboutPage() {
           </div>
           <h1 className="font-display font-bold text-[clamp(2rem,3.6vw,2.9rem)] text-[#03213B] mb-4">About Mohan Dental Care</h1>
           <p className="text-[#66737F] text-[1.06rem] max-w-[60ch]">
-            Led by Dr. P. R. Rajwade, BDS, the Surajpur clinic combines routine dental care with surgical,
-            orthodontic and cosmetic treatment — all in one place on M.G. Road.
+            Led by Dr. P. R. Rajwade, the Surajpur clinic combines routine dental care with surgical,
+            orthodontic and cosmetic treatment - all in one place on M.G. Road.
           </p>
         </div>
       </div>
@@ -261,7 +252,7 @@ export function AboutPage() {
 
           <div className="mt-6 lg:mt-0">
             <h2 className="font-display font-bold text-[1.8rem] text-[#03213B] mb-1">Dr. P. R. Rajwade</h2>
-            <p className="text-[#66737F] text-[0.98rem] mb-6">B.D.S. — Government Dental College, Raipur</p>
+            <p className="text-[#66737F] text-[0.98rem] mb-6">Government Dental College, Raipur</p>
 
             {/* Credential pills */}
             <div className="flex flex-wrap gap-3 mb-8">
@@ -368,7 +359,7 @@ export function AboutPage() {
           </div>
           <h2 className="font-display font-bold text-[clamp(1.7rem,2.8vw,2.2rem)] text-ink-950 mb-4">Gallery</h2>
           <p className="text-ink-700 text-[1rem] mb-10 max-w-[52ch]">
-            A look inside Mohan Dental Care — modern, clean and designed around your comfort.
+            A look inside Mohan Dental Care - modern, clean and designed around your comfort.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
@@ -387,7 +378,7 @@ export function AboutPage() {
           </div>
 
           <p className="text-ink-700 text-sm mt-5">
-            Placeholder images — will be replaced with real clinic photos.
+            Placeholder images - will be replaced with real clinic photos.
           </p>
         </div>
       </section>
@@ -411,7 +402,7 @@ export function AboutPage() {
                 ),
                 grad: 'from-[#03213B] to-[#133A5B]',
                 title: '12 Treatments Under One Roof',
-                desc: 'From routine cleanings to wisdom tooth surgery, braces and smile makeovers — no referrals needed for most cases.',
+                desc: 'From routine cleanings to wisdom tooth surgery, braces and smile makeovers - no referrals needed for most cases.',
               },
               {
                 icon: (
@@ -422,7 +413,7 @@ export function AboutPage() {
                 ),
                 grad: 'from-[#133A5B] to-[#03213B]',
                 title: 'Digital RVG X-Ray Chairside',
-                desc: 'Images appear on screen in 5 seconds, with 80% less radiation than traditional film — diagnosis and planning in the same visit.',
+                desc: 'Images appear on screen in 5 seconds, with 80% less radiation than traditional film - diagnosis and planning in the same visit.',
               },
               {
                 icon: (
@@ -444,7 +435,7 @@ export function AboutPage() {
                 ),
                 grad: 'from-[#987F68] to-[#133A5B]',
                 title: 'Premium Crown Materials',
-                desc: 'Zirconia, EMAX and DMLS options give you the best material for your specific tooth — strength and aesthetics matched to need.',
+                desc: 'Zirconia, EMAX and DMLS options give you the best material for your specific tooth - strength and aesthetics matched to need.',
               },
               {
                 icon: (
@@ -465,7 +456,7 @@ export function AboutPage() {
                 ),
                 grad: 'from-[#BFA88F] to-[#03213B]',
                 title: 'Easy Booking via WhatsApp',
-                desc: 'No waiting on hold. Fill the form, it opens WhatsApp — appointment confirmed quickly.',
+                desc: 'No waiting on hold. Fill the form, it opens WhatsApp - appointment confirmed quickly.',
               },
             ].map(({ icon, grad, title, desc }) => (
               <div key={title} className="card-3d bg-white rounded-2xl p-6 border border-[#E4E5E4] shadow-card cursor-default">

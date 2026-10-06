@@ -6,15 +6,15 @@ import { ALL_SERVICES } from '../servicesData';
 // BADGE COLOR MAP
 // ──────────────────────────────────────────────────────────────────────────────
 const BADGE_COLORS = {
-  Preventive:  'bg-teal-50 text-teal-700 border-teal-200',
-  Diagnostic:  'bg-blue-50 text-blue-700 border-blue-200',
-  Screening:   'bg-red-50 text-red-700 border-red-200',
+  Preventive: 'bg-teal-50 text-teal-700 border-teal-200',
+  Diagnostic: 'bg-blue-50 text-blue-700 border-blue-200',
+  Screening: 'bg-red-50 text-red-700 border-red-200',
   Restorative: 'bg-purple-50 text-purple-700 border-purple-200',
-  Surgical:    'bg-orange-50 text-orange-700 border-orange-200',
-  Emergency:   'bg-red-100 text-red-800 border-red-300',
+  Surgical: 'bg-orange-50 text-orange-700 border-orange-200',
+  Emergency: 'bg-red-100 text-red-800 border-red-300',
   Orthodontic: 'bg-violet-50 text-violet-700 border-violet-200',
-  Cosmetic:    'bg-pink-50 text-pink-700 border-pink-200',
-  Pediatric:   'bg-green-50 text-green-700 border-green-200',
+  Cosmetic: 'bg-pink-50 text-pink-700 border-pink-200',
+  Pediatric: 'bg-green-50 text-green-700 border-green-200',
 };
 
 // ──────────────────────────────────────────────────────────────────────────────
@@ -41,8 +41,8 @@ function ServiceCard({ svc, delay = 0, onClick }) {
           <div className="flex items-start justify-between mb-5 gap-2">
             <div className="w-12 h-12 rounded-xl bg-[#e0f2fe] text-[#0284c7] flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-250 ease-out flex-shrink-0">
               <svg className="w-6 h-6 text-[#0284c7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2C8 2 5 5 5 9c0 3 2 6 3 9 1 3 2 4 4 4s3-1 4-4c1-3 3-6 3-9 0-4-3-7-7-7z"/>
-                <path d="M9 10h6"/>
+                <path d="M12 2C8 2 5 5 5 9c0 3 2 6 3 9 1 3 2 4 4 4s3-1 4-4c1-3 3-6 3-9 0-4-3-7-7-7z" />
+                <path d="M9 10h6" />
               </svg>
             </div>
             <span className="inline-block text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#e0f2fe] text-[#0284c7] border border-[#0284c7]/20 flex-shrink-0">
@@ -58,7 +58,7 @@ function ServiceCard({ svc, delay = 0, onClick }) {
         <div>
           <div className="flex items-center gap-1.5 text-[#64748b] text-xs font-semibold mb-4 pt-3 border-t border-slate-100">
             <svg className="w-4 h-4 text-[#0284c7] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>
+              <circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" />
             </svg>
             <span>{svc.duration}</span>
           </div>
@@ -74,7 +74,7 @@ function ServiceCard({ svc, delay = 0, onClick }) {
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
-// SERVICE DETAIL MODAL — bottom sheet on mobile, centered on desktop
+// SERVICE DETAIL MODAL - bottom sheet on mobile, centered on desktop
 // ──────────────────────────────────────────────────────────────────────────────
 function ServiceModal({ svc, onClose }) {
   const [openFaq, setOpenFaq] = useState(null);
@@ -107,7 +107,7 @@ function ServiceModal({ svc, onClose }) {
             style={{ minHeight: '32px' }}
           >
             <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-              <path d="M6 6l12 12M18 6l-12 12"/>
+              <path d="M6 6l12 12M18 6l-12 12" />
             </svg>
           </button>
 
@@ -133,21 +133,21 @@ function ServiceModal({ svc, onClose }) {
           {/* Meta chips */}
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-7">
             {[
-              { icon: <circle cx="12" cy="12" r="8.5"/>, path: <path d="M12 7.5V12l3 2"/>, label: 'Duration', val: svc.duration },
+              { icon: <circle cx="12" cy="12" r="8.5" />, path: <path d="M12 7.5V12l3 2" />, label: 'Duration', val: svc.duration },
               { icon: null, path: null, label: 'Frequency', val: svc.freq, isCalendar: true },
             ].map(({ label, val, isCalendar }) => (
               <div key={label} className="flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-2xl bg-[#E4E5E4]/60 border border-[#E4E5E4] min-w-0 max-w-full">
                 <svg className="w-4 h-4 text-accent-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   {isCalendar ? (
                     <>
-                      <rect x="3.5" y="5" width="17" height="15" rx="2.4"/>
-                      <line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/>
-                      <line x1="8" y1="3" x2="8" y2="7"/>
-                      <line x1="16" y1="3" x2="16" y2="7"/>
+                      <rect x="3.5" y="5" width="17" height="15" rx="2.4" />
+                      <line x1="3.5" y1="9.5" x2="20.5" y2="9.5" />
+                      <line x1="8" y1="3" x2="8" y2="7" />
+                      <line x1="16" y1="3" x2="16" y2="7" />
                     </>
                   ) : (
                     <>
-                      <circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>
+                      <circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" />
                     </>
                   )}
                 </svg>
@@ -164,7 +164,7 @@ function ServiceModal({ svc, onClose }) {
             <div className="bg-[#E4E5E4]/50 rounded-2xl p-4 sm:p-5 border border-[#E4E5E4]/60">
               <h4 className="font-display font-bold text-[0.88rem] text-ink-950 mb-4 flex items-center gap-2">
                 <svg className="w-4 h-4 text-teal-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12.5l4.5 4.5L19 7"/>
+                  <path d="M5 12.5l4.5 4.5L19 7" />
                 </svg>
                 Key Benefits
               </h4>
@@ -181,7 +181,7 @@ function ServiceModal({ svc, onClose }) {
             <div className="bg-[#E4E5E4]/50 rounded-2xl p-4 sm:p-5 border border-[#E4E5E4]/60">
               <h4 className="font-display font-bold text-[0.88rem] text-ink-950 mb-4 flex items-center gap-2">
                 <svg className="w-4 h-4 text-accent-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 12l2 2 4-4M12 3l7 3v6c0 4.8-3 8-7 9-4-1-7-4.2-7-9V6z"/>
+                  <path d="M9 12l2 2 4-4M12 3l7 3v6c0 4.8-3 8-7 9-4-1-7-4.2-7-9V6z" />
                 </svg>
                 Treatment Steps
               </h4>
@@ -203,7 +203,7 @@ function ServiceModal({ svc, onClose }) {
             <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4 sm:p-5 mb-7">
               <h4 className="font-display font-bold text-[0.88rem] text-amber-900 mb-3 flex items-center gap-2">
                 <svg className="w-4 h-4 text-amber-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 9v4M12 17h.01M10.29 3.86l-8.17 14A2 2 0 0 0 3.86 21h16.28a2 2 0 0 0 1.74-3l-8.17-14a2 2 0 0 0-3.48 0z"/>
+                  <path d="M12 9v4M12 17h.01M10.29 3.86l-8.17 14A2 2 0 0 0 3.86 21h16.28a2 2 0 0 0 1.74-3l-8.17-14a2 2 0 0 0-3.48 0z" />
                 </svg>
                 Aftercare Instructions
               </h4>
@@ -234,7 +234,7 @@ function ServiceModal({ svc, onClose }) {
                       className={`w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`}
                       viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
                     >
-                      <path d="M6 9l6 6 6-6"/>
+                      <path d="M6 9l6 6 6-6" />
                     </svg>
                   </button>
                   {openFaq === i && (
@@ -270,8 +270,8 @@ function ServiceModal({ svc, onClose }) {
             className="w-full flex items-center justify-center gap-2.5 py-4 rounded-2xl bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold text-[0.93rem] sm:text-[0.97rem] shadow-[0_10px_30px_-8px_rgba(37,211,102,0.5)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
           >
             <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z"/>
-              <path d="M8.3 8.4c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.8.1.2.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1 1.9 1.3 2.2 1.4.3.2.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.3.1.8-.1 1.3-.3.5-1.4 1.2-2 1.2-.5.1-1.1.1-3.5-.8-2.9-1.2-4.8-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4z" fill="white" stroke="none"/>
+              <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z" />
+              <path d="M8.3 8.4c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.8.1.2.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1 1.9 1.3 2.2 1.4.3.2.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.3.1.8-.1 1.3-.3.5-1.4 1.2-2 1.2-.5.1-1.1.1-3.5-.8-2.9-1.2-4.8-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4z" fill="white" stroke="none" />
             </svg>
             Book This Treatment on WhatsApp
           </a>
@@ -361,7 +361,7 @@ const FEATURED_TREATMENTS = [
 ];
 
 // ──────────────────────────────────────────────────────────────────────────────
-// SERVICE TEASER — homepage
+// SERVICE TEASER - homepage
 // ──────────────────────────────────────────────────────────────────────────────
 export function ServiceTeaser({ setActivePage }) {
   const [headRef, headVisible] = useScrollReveal();
@@ -377,7 +377,7 @@ export function ServiceTeaser({ setActivePage }) {
       {selected && <ServiceModal svc={selected} onClose={() => setSelected(null)} />}
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
-        
+
         {/* Header */}
         <div
           ref={headRef}
@@ -401,9 +401,8 @@ export function ServiceTeaser({ setActivePage }) {
             <div
               key={item.id}
               onClick={() => handleOpenTreatment(item)}
-              className={`bg-white rounded-2xl p-7 sm:p-8 border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.05)] hover:shadow-[0_14px_30px_-10px_rgba(3,33,59,0.1)] hover:-translate-y-1 hover:border-[#123b5d]/40 transition-all duration-300 ease-out flex flex-col justify-between cursor-pointer group active:scale-[0.99] ${
-                headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-              }`}
+              className={`bg-white rounded-2xl p-7 sm:p-8 border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.05)] hover:shadow-[0_14px_30px_-10px_rgba(3,33,59,0.1)] hover:-translate-y-1 hover:border-[#123b5d]/40 transition-all duration-300 ease-out flex flex-col justify-between cursor-pointer group active:scale-[0.99] ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+                }`}
               style={{ transitionDelay: headVisible ? `${100 + (i % 3) * 100}ms` : '0ms' }}
             >
               <div>
@@ -474,7 +473,7 @@ export function ServicesPage() {
             {[
               { num: '12', label: 'Services' },
               { num: '5', label: 'Specialties' },
-              { num: 'BDS', label: 'Qualified Doctor' },
+              { num: 'Expert', label: 'Qualified Doctor' },
               { num: '9AM–8PM', label: 'Daily Hours' },
             ].map(({ num, label }) => (
               <div key={label} className="px-4 py-2.5 bg-white rounded-2xl shadow-sm border border-[#E5E8E8] text-center">
@@ -492,7 +491,7 @@ export function ServicesPage() {
           {/* Filter label */}
           <span className="hidden sm:flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[#66737F] flex-shrink-0 border-r border-[#E5E8E8] pr-3 mr-1">
             <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
             </svg>
             Filter
           </span>
@@ -558,8 +557,8 @@ export function ServicesPage() {
             className="relative btn-shimmer flex items-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold shadow-[0_14px_30px_-8px_rgba(37,211,102,0.5)] hover:-translate-y-1 active:scale-[0.98] transition-all duration-200 whitespace-nowrap"
           >
             <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z"/>
-              <path d="M8.3 8.4c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.8.1.2.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1 1.9 1.3 2.2 1.4.3.2.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.3.1.8-.1 1.3-.3.5-1.4 1.2-2 1.2-.5.1-1.1.1-3.5-.8-2.9-1.2-4.8-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4z" fill="white" stroke="none"/>
+              <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z" />
+              <path d="M8.3 8.4c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.7.8 1.8.1.2.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1 1.9 1.3 2.2 1.4.3.2.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.6.8 1.9 1 .3.1.5.2.5.3.1.3.1.8-.1 1.3-.3.5-1.4 1.2-2 1.2-.5.1-1.1.1-3.5-.8-2.9-1.2-4.8-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4z" fill="white" stroke="none" />
             </svg>
             Ask Dr. Rajwade on WhatsApp
           </a>

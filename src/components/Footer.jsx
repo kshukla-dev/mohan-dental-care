@@ -6,10 +6,10 @@ export default function Footer() {
   return (
     <footer className="bg-[#03213B] text-[#EEF1F1]/80 pt-16 pb-12 border-t border-[#133A5B]">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
-        
+
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
-          
+
           {/* Col 1: Brand (4 cols) */}
           <div className="lg:col-span-4">
             <div className="mb-5 inline-block bg-white p-3 rounded-2xl shadow-sm border border-[#E5E8E8]">
@@ -20,7 +20,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-[#EEF1F1]/70 leading-relaxed max-w-[34ch] mb-4">
-              Modern dental studio and family dental healthcare practice in Surajpur, under the clinical leadership of <strong className="text-white">Dr. P. R. Rajwade, BDS</strong>.
+              Modern dental studio and family dental healthcare practice in Surajpur, under the clinical leadership of <strong className="text-white">Dr. P. R. Rajwade</strong>.
             </p>
             <p className="text-xs text-[#BFA88F] font-semibold">
               Reg. CGDC/G/23/3989 · Chhattisgarh Dental Council
@@ -37,7 +37,6 @@ export default function Footer() {
                 { label: 'Home', href: '#home' },
                 { label: 'About Doctor', href: '#doctor' },
                 { label: 'Treatments', href: '#treatments' },
-                { label: 'Before & After', href: '#before-after' },
                 { label: 'Patient Reviews', href: '#reviews' },
                 { label: 'Contact Us', href: '#booking' },
               ].map(({ label, href }) => (

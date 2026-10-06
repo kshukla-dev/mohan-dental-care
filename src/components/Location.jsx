@@ -144,7 +144,7 @@ export default function Location() {
                 />
                 <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#03213B] via-[#03213B]/80 to-transparent text-left">
                   <p className="text-white font-display font-bold text-sm">Consultation Office &amp; Reception</p>
-                  <p className="text-[#BFA88F] text-xs font-medium">Mohan Dental Care • Dr. P. R. Rajwade, BDS</p>
+                  <p className="text-[#BFA88F] text-xs font-medium">Mohan Dental Care • Dr. P. R. Rajwade</p>
                 </div>
               </div>
             ) : (

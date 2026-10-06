@@ -5,7 +5,7 @@ const GALLERY_CASES = [
   {
     id: 1,
     treatment: 'Teeth Whitening',
-    desc: 'Professional whitening — 8 shades brighter in a single session',
+    desc: 'Professional whitening - 8 shades brighter in a single session',
     gradient: 'from-amber-50 to-yellow-50',
     sessions: '1–2',
     duration: '2–3 Years',
@@ -21,7 +21,7 @@ const GALLERY_CASES = [
   {
     id: 3,
     treatment: 'Clear Aligners',
-    desc: 'Invisible orthodontics — natural, aligned smile in 9 months',
+    desc: 'Invisible orthodontics - natural, aligned smile in 9 months',
     gradient: 'from-teal-50 to-emerald-50',
     sessions: '8–12',
     duration: 'Permanent',
@@ -47,7 +47,7 @@ function BeforeSVG({ idx }) {
           <stop offset="100%" stopColor="#c8b050" />
         </radialGradient>
       </defs>
-      <path d="M25 28 Q22 14 32 10 Q50 3 70 6 Q90 3 97 14 Q104 26 98 55 Q92 84 86 104 Q80 124 60 134 Q44 128 40 114 Q30 94 25 62 Z" fill={`url(#bf${idx})`} stroke="#c0a040" strokeWidth="1.5"/>
+      <path d="M25 28 Q22 14 32 10 Q50 3 70 6 Q90 3 97 14 Q104 26 98 55 Q92 84 86 104 Q80 124 60 134 Q44 128 40 114 Q30 94 25 62 Z" fill={`url(#bf${idx})`} stroke="#c0a040" strokeWidth="1.5" />
       <ellipse cx="45" cy="55" rx="16" ry="11" fill={sc} opacity="0.3" />
       <ellipse cx="78" cy="82" rx="11" ry="7" fill={sc} opacity="0.25" />
       <ellipse cx="32" cy="88" rx="9" ry="6" fill={sc} opacity="0.22" />
@@ -67,7 +67,7 @@ function AfterSVG({ idx }) {
           <stop offset="100%" stopColor="#d0eaff" />
         </radialGradient>
       </defs>
-      <path d="M25 28 Q22 14 32 10 Q50 3 70 6 Q90 3 97 14 Q104 26 98 55 Q92 84 86 104 Q80 124 60 134 Q44 128 40 114 Q30 94 25 62 Z" fill={`url(#af${idx})`} stroke="#90c8f0" strokeWidth="1.5"/>
+      <path d="M25 28 Q22 14 32 10 Q50 3 70 6 Q90 3 97 14 Q104 26 98 55 Q92 84 86 104 Q80 124 60 134 Q44 128 40 114 Q30 94 25 62 Z" fill={`url(#af${idx})`} stroke="#90c8f0" strokeWidth="1.5" />
       <ellipse cx="42" cy="40" rx="13" ry="9" fill="white" opacity="0.8" />
       <circle cx="60" cy="74" r="17" fill="#0284c7" opacity="0.1" />
       <path d="M51 74 L57 80 L70 64" stroke="#0284c7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
@@ -108,11 +108,10 @@ export default function SmileGallery() {
             <button
               key={c.id}
               onClick={() => setActiveCase(i)}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 border ${
-                activeCase === i
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 border ${activeCase === i
                   ? 'bg-[#03213B] text-white border-[#03213B] shadow-md'
                   : 'bg-white text-[#66737F] border-[#E5E8E8] hover:border-[#123b5d]/40 hover:text-[#03213B]'
-              }`}
+                }`}
             >
               {c.treatment}
             </button>
@@ -150,7 +149,7 @@ export default function SmileGallery() {
                   </div>
                   <h3 className="font-display font-bold text-[1.35rem] sm:text-[1.6rem] text-[#03213B] leading-snug mb-3">{c.desc}</h3>
                   <p className="text-[#66737F] text-[0.93rem] leading-relaxed mb-6">
-                    Treatment performed by Dr. P.R. Rajwade, B.D.S. at Mohan Dental Care, Surajpur using advanced clinical techniques and premium aesthetic materials.
+                    Treatment performed by Dr. P.R. Rajwade at Mohan Dental Care, Surajpur using advanced clinical techniques and premium aesthetic materials.
                   </p>
                   <div className="grid grid-cols-2 gap-3 mb-6">
                     {[
