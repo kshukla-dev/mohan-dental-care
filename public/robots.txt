@@ -1,0 +1,45 @@
+# Robots.txt for Mohan Dental Care Surajpur (मोहन डेंटल केयर सूरजपुर)
+# Website: https://avinash-1994.github.io/mohan-dental-care/
+
+User-agent: *
+Allow: /
+
+# Googlebot & Major Search Engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI Crawlers & Answer Engines (SearchGPT, Claude, Perplexity, Gemini)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+# Sitemaps & LLM Context File
+Sitemap: https://avinash-1994.github.io/mohan-dental-care/sitemap.xml
+# LLMs knowledge standard
+# Documentation for AI models: https://avinash-1994.github.io/mohan-dental-care/llms.txt

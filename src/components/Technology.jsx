@@ -1,109 +1,110 @@
-import { useScrollReveal, useTilt } from '../utils';
+import { useScrollReveal, getAssetUrl } from '../utils';
 
 const TECH_ITEMS = [
   {
-    grad: 'from-ink-800 to-ink-950',
     title: 'Digital X-Ray (RVG)',
-    desc: 'RadioVisioGraphy gives an instant chairside image using far less radiation than traditional film, so the doctor can plan treatment in the same visit.',
-    img: '/images/xray.png',
+    desc: 'Instant chairside imaging with significantly reduced radiation exposure, enabling fast, accurate diagnosis during your visit.',
+    img: 'images/xray.webp',
     icon: (
-      <svg className="w-7 h-7 text-accent-400" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="6" y="9" width="28" height="20" rx="3"/>
-        <circle cx="20" cy="18" r="4"/>
-        <line x1="6" y1="33" x2="34" y2="33"/>
-        <line x1="12" y1="33" x2="12" y2="36"/>
-        <line x1="28" y1="33" x2="28" y2="36"/>
+      <svg className="w-5 h-5 text-[#123b5d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
   },
   {
-    grad: 'from-purple-900 to-ink-950',
-    title: 'Zirconia, EMAX & DMLS',
-    desc: 'Zirconia offers strength for back teeth, EMAX offers natural translucency for visible teeth, and DMLS metal frameworks add extra durability where needed.',
-    img: '/images/treatment.png',
+    title: 'Modern Dental Equipment',
+    desc: 'High-precision rotary endodontics and premium dental restorative materials including Zirconia and EMAX for natural aesthetics.',
+    img: 'images/treatment.webp',
     icon: (
-      <svg className="w-7 h-7 text-accent-400" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 12l3.5 4 4-6.5 3.5 5.5 3.5-5.5 4 6.5 3.5-4v6h-21.5z"/>
-        <rect x="9" y="18" width="22" height="8" rx="2"/>
+      <svg className="w-5 h-5 text-[#123b5d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2C8 2 5 5 5 9c0 3 2 6 3 9 1 3 2 4 4 4s3-1 4-4c1-3 3-6 3-9 0-4-3-7-7-7z" />
       </svg>
     ),
   },
   {
-    grad: 'from-teal-900 to-ink-950',
-    title: 'Ultrasonic Scaling',
-    desc: 'High-frequency vibration breaks up plaque and tartar gently, clearing the gumline without the scraping of manual tools.',
-    img: '/images/sterilization.png',
+    title: 'Advanced Sterilization',
+    desc: 'Strict multi-tier hospital-grade autoclaving and sanitized operatory protocols ensuring 100% patient safety and hygiene.',
+    img: 'images/sterilization.webp',
     icon: (
-      <svg className="w-7 h-7 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 3l7 3v6c0 4.8-3 8-7 9-4-1-7-4.2-7-9V6z"/>
+      <svg className="w-5 h-5 text-[#123b5d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Comfort-focused Treatment',
+    desc: 'Ergonomic treatment chairs, gentle ultrasonic plaque scaling, and an anxiety-free environment suited for patients of all ages.',
+    img: 'images/reception.webp',
+    icon: (
+      <svg className="w-5 h-5 text-[#123b5d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
   },
 ];
 
-function TechCard({ item, delay }) {
-  const tilt = useTilt(8);
-  const [ref, visible] = useScrollReveal();
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div
-        {...tilt}
-        className="tech-card-3d rounded-2xl overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)] h-full cursor-default"
-        style={{ transformStyle: 'preserve-3d' }}
-      >
-        {/* Image preview with dark overlay */}
-        <div className="relative h-40 overflow-hidden">
-          <img src={item.img} alt={item.title} className="w-full h-full object-cover opacity-50"/>
-          <div className={`absolute inset-0 bg-gradient-to-b ${item.grad} opacity-80`}/>
-          <div className="absolute bottom-4 left-5">
-            {item.icon}
-          </div>
-        </div>
-        {/* Dark content area */}
-        <div className="bg-[#1c1712] border border-white/10 border-t-0 rounded-b-2xl p-6">
-          <h3 className="font-display font-bold text-[1.12rem] text-white mb-3">{item.title}</h3>
-          <p className="text-[#b3ada2] text-[0.94rem] leading-relaxed">{item.desc}</p>
-          <div className="mt-5 h-0.5 bg-gradient-to-r from-accent-500/60 to-transparent rounded-full" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default function Technology({ isAbout = false }) {
+export default function Technology({ _isAbout = false }) {
   const [headRef, headVisible] = useScrollReveal();
 
   return (
-    <section className={`py-14 sm:py-24 relative overflow-hidden ${isAbout ? 'bg-[#f3f1f7]' : 'bg-ink-950'}`}>
-      {!isAbout && (
-        <div className="glow-orb w-[400px] h-[400px] bg-accent-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10"/>
-      )}
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 relative">
+    <section id="technology" className="py-16 sm:py-24 bg-[#EEF1F1]/50 relative">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
+        
+        {/* Header */}
         <div
           ref={headRef}
-          className={`mb-8 sm:mb-14 transition-all duration-700 ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className="text-center max-w-[640px] mx-auto mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/15 text-accent-400 text-xs font-bold tracking-[0.08em] uppercase mb-5">
-            <span className="w-2 h-2 rounded-full bg-accent-400" />
-            Equipment &amp; Materials
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4 transition-all duration-500 ease-out ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+            CLINICAL EXCELLENCE
           </div>
-          <h2 className={`font-display font-bold text-[clamp(1.9rem,3.2vw,2.6rem)] mb-4 ${isAbout ? 'text-ink-950' : 'text-white'}`}>
-            Modern Equipment, Used Chairside
+          <h2 className={`font-display font-bold text-[clamp(1.85rem,3.2vw,2.5rem)] text-[#03213B] leading-tight mb-3 transition-all duration-600 delay-100 ease-out ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+            Modern Technology. Better Dental Care.
           </h2>
-          <p className={`text-[1.04rem] max-w-[52ch] ${isAbout ? 'text-ink-700' : 'text-[#b3ada2]'}`}>
-            The materials and imaging that make treatments faster, more precise and longer lasting.
+          <p className={`text-[#66737F] text-[0.98rem] sm:text-[1.05rem] leading-relaxed transition-all duration-600 delay-200 ease-out ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+            Advanced diagnostic imaging, sterile instruments, and refined materials that make visits faster, gentler, and more predictable.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {TECH_ITEMS.map((item, i) => (
-            <TechCard key={item.title} item={item} delay={i * 150}/>
+            <div
+              key={item.title}
+              className={`group bg-white rounded-2xl overflow-hidden border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.05)] hover:shadow-[0_12px_30px_-8px_rgba(3,33,59,0.1)] hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col ${
+                headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              }`}
+              style={{ transitionDelay: headVisible ? `${100 + i * 80}ms` : '0ms' }}
+            >
+              {/* Image Preview */}
+              <div className="relative h-44 overflow-hidden bg-[#EEF1F1]">
+                <img
+                  src={getAssetUrl(item.img)}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                />
+                <div className="absolute top-3 right-3 w-8 h-8 rounded-lg bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm transition-transform duration-250 ease-out group-hover:scale-105">
+                  {item.icon}
+                </div>
+              </div>
+
+              {/* Text */}
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-display font-bold text-[1.05rem] text-[#03213B] mb-2 group-hover:text-[#123b5d] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#66737F] text-xs sm:text-[0.88rem] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );

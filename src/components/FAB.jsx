@@ -1,81 +1,72 @@
-import { useState } from 'react';
-
 export default function FAB() {
-  const [open, setOpen] = useState(false);
-
-  const ITEMS = [
-    {
-      label: 'Call the clinic',
-      href: 'tel:+918839557607',
-      icon: (
-        <svg className="w-5 h-5 text-accent-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M7 3.5c-2 0-3.5 1.8-3.2 3.7C4.7 14.6 9.4 19.3 16.8 20.2c1.9.3 3.7-1.2 3.7-3.2v-1.8c0-.6-.4-1.1-1-1.3l-3.4-1.1c-.5-.2-1.1 0-1.4.4l-1 1.3c-2.3-1.1-4.1-2.9-5.2-5.2l1.3-1c.4-.3.6-.9.4-1.4L9.1 3.5c-.2-.6-.7-1-1.3-1H7z"/>
-        </svg>
-      ),
-    },
-    {
-      label: 'WhatsApp us',
-      href: 'https://wa.me/918839557607',
-      external: true,
-      icon: (
-        <svg className="w-5 h-5 text-teal-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z"/>
-        </svg>
-      ),
-    },
-    {
-      label: 'Book appointment',
-      href: '#booking',
-      icon: (
-        <svg className="w-5 h-5 text-accent-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3.5" y="5" width="17" height="15" rx="2.4"/>
-          <line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/>
-          <line x1="8" y1="3" x2="8" y2="7"/>
-          <line x1="16" y1="3" x2="16" y2="7"/>
-        </svg>
-      ),
-      onClick: (e) => {
-        e.preventDefault();
-        document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
-      },
-    },
-  ];
+  const handleBookClick = (e) => {
+    e.preventDefault();
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <div className="fixed right-5 bottom-5 z-50 flex flex-col items-end gap-3">
-      <div className="flex flex-col gap-2 items-end mb-1">
-        {ITEMS.map(({ label, href, icon, external, onClick }, i) => (
-          <a
-            key={label}
-            href={href}
-            target={external ? '_blank' : undefined}
-            rel={external ? 'noopener noreferrer' : undefined}
-            onClick={(e) => { if (onClick) onClick(e); setOpen(false); }}
-            className={`fab-menu-item flex items-center gap-3 pl-4 pr-5 py-3 rounded-full bg-white text-ink-950 shadow-card border border-[#ece5db] text-[0.87rem] font-bold whitespace-nowrap ${open ? 'open' : ''}`}
-            style={{ transitionDelay: open ? `${i * 50}ms` : '0ms' }}
-          >
-            {icon}
-            {label}
-          </a>
-        ))}
-      </div>
-
-      <button
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        aria-label="Quick contact options"
-        className={`w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-br from-teal-400 to-teal-600 text-white shadow-[0_10px_30px_-8px_rgba(37,211,102,0.5)] hover:shadow-[0_14px_36px_-8px_rgba(37,211,102,0.65)] transition-all duration-300 ${open ? 'rotate-[135deg] scale-95' : 'hover:-translate-y-1'}`}
+    <>
+      {/* ── MOBILE-ONLY PERSISTENT STICKY BOTTOM ACTION BAR ── */}
+      <nav
+        aria-label="Mobile quick actions"
+        className="fixed bottom-0 inset-x-0 z-[90] w-full bg-[#03213B] border-t border-[#133A5B] px-3 py-2 sm:py-2.5 flex items-center justify-between gap-2.5 md:hidden safe-bottom shadow-[0_-8px_30px_rgba(3,33,59,0.5)] transform-gpu"
+        style={{ transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}
       >
-        {open ? (
-          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-            <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+        {/* Call Action */}
+        <a
+          href="tel:+918839557607"
+          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-[#0b253d] hover:bg-[#133A5B] active:scale-95 text-white text-xs font-bold border border-white/10 transition-all duration-150 min-h-[44px]"
+        >
+          <svg className="w-4 h-4 text-[#38bdf8] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-        ) : (
-          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.3A9 9 0 1 0 12 3z"/>
+          <span className="tracking-wide">Call</span>
+        </a>
+
+        {/* WhatsApp Action */}
+        <a
+          href="https://wa.me/918839557607"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] active:scale-95 text-white text-xs font-bold shadow-[0_2px_12px_rgba(37,211,102,0.4)] transition-all duration-150 min-h-[44px]"
+        >
+          <svg className="w-4 h-4 fill-white flex-shrink-0" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
           </svg>
-        )}
-      </button>
-    </div>
+          <span className="tracking-wide">WhatsApp</span>
+        </a>
+
+        {/* Primary Book Appointment Action */}
+        <a
+          href="#booking"
+          onClick={handleBookClick}
+          className="flex-[1.25] flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-[#123b5d] hover:bg-[#0c2a44] active:scale-95 text-white text-xs font-bold border border-white/10 transition-all duration-150 min-h-[44px]"
+        >
+          <svg className="w-4 h-4 text-[#38bdf8] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <span className="tracking-wide whitespace-nowrap">Book Visit</span>
+        </a>
+      </nav>
+
+      {/* ── DESKTOP FLOATING QUICK ASSISTANCE (Hidden on Mobile) ── */}
+      <div className="hidden md:flex fixed right-6 bottom-6 z-50 flex-col items-end gap-3">
+        <a
+          href="https://wa.me/918839557607"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 rounded-full flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-[0_8px_25px_-4px_rgba(37,211,102,0.55)] hover:scale-110 active:scale-95 transition-all duration-200"
+          style={{ width: '56px', height: '56px', minWidth: '56px', minHeight: '56px', padding: 0 }}
+          aria-label="Chat on WhatsApp"
+        >
+          <svg className="w-7 h-7 fill-white" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+          </svg>
+        </a>
+      </div>
+    </>
   );
 }

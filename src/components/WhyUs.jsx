@@ -1,95 +1,93 @@
-import { useScrollReveal, useTilt } from '../utils';
+import { useScrollReveal } from '../utils';
 
 const WHY_ITEMS = [
   {
-    gradient: 'from-purple-500 to-accent-600',
+    step: '01',
     title: 'Comprehensive Care',
-    desc: 'Twelve services under one roof — from routine cleanings to wisdom tooth surgery, jaw fracture care and full smile makeovers.',
+    desc: 'From routine checkups and cleanings to complex root canals, dental implants, wisdom tooth surgery, and full smile makeovers under one roof.',
     icon: (
-      <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 3l7 3v6c0 4.8-3 8-7 9-4-1-7-4.2-7-9V6z"/>
+      <svg className="w-6 h-6 text-[#123b5d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
   },
   {
-    gradient: 'from-blue-500 to-purple-600',
+    step: '02',
     title: 'Modern Equipment',
-    desc: 'Digital RVG X-ray and Zirconia, EMAX and DMLS crown materials for faster, more precise treatment.',
+    desc: 'Chairside digital RVG X-rays with reduced radiation, modern ultrasonic scaling, and high-strength aesthetic materials like Zirconia and EMAX.',
     icon: (
-      <svg className="w-7 h-7 text-white" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="6" y="9" width="28" height="20" rx="3"/>
-        <circle cx="20" cy="18" r="4"/>
-        <line x1="6" y1="33" x2="34" y2="33"/>
-        <line x1="12" y1="33" x2="12" y2="36"/>
-        <line x1="28" y1="33" x2="28" y2="36"/>
+      <svg className="w-6 h-6 text-[#123b5d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
   },
   {
-    gradient: 'from-teal-500 to-teal-700',
+    step: '03',
     title: 'Comfortable Treatment',
-    desc: 'Gentle ultrasonic scaling and a calm, unhurried approach at every appointment.',
+    desc: 'Gentle, unhurried chairside care focused on patient comfort, clear treatment explanations, and stress-free dental visits for every age group.',
     icon: (
-      <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="8.5"/>
-        <path d="M8.5 15.5c1 2 2 2.5 3.5 2.5s2.5-.5 3.5-2.5"/>
-        <circle cx="9.5" cy="10" r="1" fill="currentColor"/>
-        <circle cx="14.5" cy="10" r="1" fill="currentColor"/>
+      <svg className="w-6 h-6 text-[#123b5d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
   },
 ];
 
-function WhyCard({ item, delay }) {
-  const tilt = useTilt(10);
-  const [ref, visible] = useScrollReveal();
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div
-        {...tilt}
-        className="svc-card-3d bg-white rounded-2xl p-5 sm:p-8 border border-[#ece5db] shadow-card cursor-default"
-        style={{ transformStyle: 'preserve-3d' }}
-      >
-        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-6 shadow-[0_8px_20px_-6px_rgba(91,79,224,0.4)]`}>
-          {item.icon}
-        </div>
-        <h3 className="font-display font-bold text-[1.15rem] text-ink-950 mb-3">{item.title}</h3>
-        <p className="text-ink-700 text-[0.95rem] leading-relaxed">{item.desc}</p>
-        <div className={`mt-6 h-1 rounded-full bg-gradient-to-r ${item.gradient} opacity-30`} />
-      </div>
-    </div>
-  );
-}
-
 export default function WhyUs() {
   const [headRef, headVisible] = useScrollReveal();
 
   return (
-    <section className="py-14 sm:py-24 bg-[#f3f1f7] relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-accent-400/10 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6">
-        <div ref={headRef} className={`text-center mb-8 sm:mb-14 transition-all duration-700 ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 text-accent-600 text-xs font-bold tracking-[0.08em] uppercase mb-5">
-            <span className="w-2 h-2 rounded-full bg-accent-500" />
-            Our Dental Philosophy
+    <section className="py-16 sm:py-24 bg-[#EEF1F1]/50 relative">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
+        
+        {/* Section Header */}
+        <div
+          ref={headRef}
+          className="text-center max-w-[620px] mx-auto mb-12 sm:mb-16"
+        >
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4 transition-all duration-500 ease-out ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+            OUR DENTAL PHILOSOPHY
           </div>
-          <h2 className="font-display font-bold text-[clamp(1.9rem,3.2vw,2.6rem)] text-ink-950 mb-4">
+          <h2 className={`font-display font-bold text-[clamp(1.85rem,3.2vw,2.5rem)] text-[#03213B] leading-tight mb-3 transition-all duration-600 delay-100 ease-out ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
             Why Patients Choose Mohan Dental Care
           </h2>
-          <p className="text-ink-700 text-[1.04rem] max-w-[52ch] mx-auto">
-            Comprehensive treatment, modern equipment and an unhurried chairside manner.
+          <p className={`text-[#66737F] text-[0.98rem] sm:text-[1.05rem] leading-relaxed transition-all duration-600 delay-200 ease-out ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+            Personalized treatment, advanced equipment, and a calm, transparent chairside manner trusted by families.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        {/* 3 Clean Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {WHY_ITEMS.map((item, i) => (
-            <WhyCard key={item.title} item={item} delay={i * 150} />
+            <div
+              key={item.title}
+              className={`group bg-white rounded-2xl p-7 sm:p-8 border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.05)] hover:shadow-[0_12px_30px_-10px_rgba(3,33,59,0.12)] hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col justify-between ${
+                headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              }`}
+              style={{ transitionDelay: headVisible ? `${150 + i * 100}ms` : '0ms' }}
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-[#E8F1F8] flex items-center justify-center transition-transform duration-250 ease-out group-hover:scale-105 group-hover:-translate-y-0.5">
+                    {item.icon}
+                  </div>
+                  <span className="font-display font-extrabold text-2xl text-[#E5E8E8] tracking-tight">
+                    {item.step}
+                  </span>
+                </div>
+                <h3 className="font-display font-bold text-[1.2rem] text-[#03213B] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[#66737F] text-[0.94rem] leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );

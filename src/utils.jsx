@@ -31,3 +31,11 @@ export function useTilt(strength = 8) {
   };
   return { ref, onPointerMove: handleMove, onPointerLeave: handleLeave };
 }
+
+// ── Asset URL helper for Vite & GitHub Pages ───────────────────────────────
+export function getAssetUrl(path) {
+  if (!path) return '';
+  const cleanPath = path.replace(/^(\.\/|\/)?(public\/)?/, '');
+  const base = import.meta.env.BASE_URL || '/';
+  return base.endsWith('/') ? `${base}${cleanPath}` : `${base}/${cleanPath}`;
+}

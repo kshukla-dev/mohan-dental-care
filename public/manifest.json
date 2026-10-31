@@ -1,0 +1,27 @@
+{
+  "name": "Mohan Dental Care Surajpur (मोहन डेंटल केयर)",
+  "short_name": "Mohan Dental",
+  "description": "Best Dental Clinic & Implant Center in Surajpur & Ambikapur under Dr. P. R. Rajwade",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#03213B",
+  "theme_color": "#03213B",
+  "icons": [
+    {
+      "src": "./images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "hi",
+  "categories": [
+    "medical",
+    "health"
+  ]
+}

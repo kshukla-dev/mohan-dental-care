@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { useScrollReveal } from '../utils';
+import { useScrollReveal, getAssetUrl } from '../utils';
 
 export default function CompareSlider() {
   const [pos, setPos] = useState(50);
@@ -8,109 +8,181 @@ export default function CompareSlider() {
   const [ref, visible] = useScrollReveal();
 
   const calcPos = (clientX) => {
+    if (!sliderRef.current) return;
     const rect = sliderRef.current.getBoundingClientRect();
-    const x = Math.max(4, Math.min(96, ((clientX - rect.left) / rect.width) * 100));
+    const x = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
     setPos(x);
   };
 
-  const onPointerDown = (e) => { setDragging(true); calcPos(e.clientX); e.currentTarget.setPointerCapture(e.pointerId); };
-  const onPointerMove = (e) => { if (dragging) calcPos(e.clientX); };
-  const onPointerUp = () => setDragging(false);
+  const onPointerDown = (e) => {
+    setDragging(true);
+    calcPos(e.clientX);
+    e.currentTarget.setPointerCapture(e.pointerId);
+  };
+
+  const onPointerMove = (e) => {
+    if (dragging) calcPos(e.clientX);
+  };
+
+  const onPointerUp = (e) => {
+    setDragging(false);
+    try {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    } catch {}
+  };
 
   return (
-    <section className="py-14 sm:py-24 bg-[#fffdfb]">
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6">
+    <section id="before-after" className="py-16 sm:py-24 bg-[#EEF1F1]/40 relative overflow-hidden">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
+        
         <div
           ref={ref}
-          className={`text-center mb-12 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 text-accent-600 text-xs font-bold tracking-[0.08em] uppercase mb-5">
-            <span className="w-2 h-2 rounded-full bg-accent-500" />
-            Smile Design Preview
+          
+          {/* ── Left Column: Interactive Before & After Slider (7 cols) ── */}
+          <div className="lg:col-span-7">
+            <div className={`bg-white rounded-3xl p-3 sm:p-4 shadow-[0_20px_50px_-15px_rgba(3,33,59,0.12)] border border-[#E5E8E8] transition-all duration-700 ease-out ${
+              visible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-[0.98] translate-y-4'
+            }`}>
+              <div
+                ref={sliderRef}
+                className="compare-slider aspect-[16/10] sm:aspect-[16/9] select-none touch-none rounded-2xl overflow-hidden relative cursor-ew-resize"
+                onPointerDown={onPointerDown}
+                onPointerMove={onPointerMove}
+                onPointerUp={onPointerUp}
+              >
+                {/* 1. Base layer: Full White (After) image */}
+                <div className="absolute inset-0 select-none">
+                  <img
+                    src={getAssetUrl('images/smile-after.webp')}
+                    alt="After smile makeover - White teeth"
+                    className="w-full h-full object-cover object-center pointer-events-none select-none"
+                    draggable="false"
+                  />
+                  <div
+                    className={`absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-[#03213B]/85 backdrop-blur-md uppercase tracking-wider shadow-md pointer-events-none transition-opacity duration-200 ${
+                      pos > 88 ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  >
+                    After
+                  </div>
+                </div>
+
+                {/* 2. Top layer: Full Yellow (Before) image clipped to slider position */}
+                <div
+                  className="absolute inset-0 select-none pointer-events-none"
+                  style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+                >
+                  <img
+                    src={getAssetUrl('images/smile-before.webp')}
+                    alt="Before smile makeover - Yellow teeth"
+                    className="w-full h-full object-cover object-center pointer-events-none select-none"
+                    draggable="false"
+                  />
+                  <div
+                    className={`absolute bottom-4 left-4 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-[#03213B]/85 backdrop-blur-md uppercase tracking-wider shadow-md pointer-events-none transition-opacity duration-200 ${
+                      pos < 12 ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  >
+                    Before
+                  </div>
+                </div>
+
+                {/* 3. Vertical Divider & Drag Handle */}
+                <div
+                  className="absolute top-0 bottom-0 z-20 flex items-center justify-center pointer-events-none"
+                  style={{ left: `${pos}%`, transform: 'translateX(-50%)' }}
+                >
+                  <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[3px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.6)]" />
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white flex items-center justify-center shadow-[0_8px_25px_-4px_rgba(3,33,59,0.35)] border border-[#E5E8E8] text-[#03213B] z-10 transition-transform duration-150">
+                    <svg className="w-4 h-4 text-[#0284c7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="15 18 9 12 15 6" />
+                      <polyline points="9 18 3 12 9 6" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Subtitle instructions */}
+              <div className="flex items-center justify-between px-2 pt-3 text-xs text-[#66737F]">
+                <span>← Drag slider horizontally</span>
+                <span>Real Clinical Outcome</span>
+              </div>
+            </div>
           </div>
-          <h2 className="font-display font-bold text-[clamp(1.9rem,3.2vw,2.6rem)] text-ink-950 mb-4">
-            See How A Smile Can Change
-          </h2>
-          <p className="text-ink-700 text-[1rem] max-w-[48ch] mx-auto">
-            Drag the slider to compare before and after smile design.
-          </p>
+
+          {/* ── Right Column: Transformation Details (5 cols) ── */}
+          <div className="lg:col-span-5 text-left">
+            <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4 transition-all duration-500 ease-out ${
+              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}>
+              SMILE TRANSFORMATION
+            </div>
+
+            <h2 className={`font-display font-bold text-[clamp(1.85rem,3.2vw,2.5rem)] text-[#03213B] leading-tight mb-4 transition-all duration-600 delay-100 ease-out ${
+              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}>
+              See the Difference
+            </h2>
+
+            <p className={`text-[#66737F] text-[0.98rem] sm:text-[1.04rem] leading-relaxed mb-6 transition-all duration-600 delay-200 ease-out ${
+              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}>
+              A balanced smile boosts both oral health and everyday self-confidence. With advanced ceramic veneers, aesthetic composite bonding, and restorative crowns, we craft natural results tailored to your facial harmony.
+            </p>
+
+            {/* Small Treatment Information Chips */}
+            <div className={`space-y-3 mb-8 transition-all duration-600 delay-300 ease-out ${
+              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}>
+              <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-[#E5E8E8] shadow-[0_2px_10px_-4px_rgba(3,33,59,0.04)]">
+                <div className="w-8 h-8 rounded-lg bg-[#E8F1F8] flex items-center justify-center flex-shrink-0 text-[#123b5d] mt-0.5">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs text-[#66737F] font-semibold uppercase tracking-wider">Treatment Approach</p>
+                  <p className="text-sm font-bold text-[#03213B]">Aesthetic Veneers &amp; Smile Alignment</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-[#E5E8E8] shadow-[0_2px_10px_-4px_rgba(3,33,59,0.04)]">
+                <div className="w-8 h-8 rounded-lg bg-[#E8F1F8] flex items-center justify-center flex-shrink-0 text-[#123b5d] mt-0.5">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs text-[#66737F] font-semibold uppercase tracking-wider">Typical Timeline</p>
+                  <p className="text-sm font-bold text-[#03213B]">2 to 3 Clinical Visits with Chairside Preview</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className={`transition-all duration-600 delay-300 ease-out ${
+              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}>
+              <a
+                href="#gallery"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#03213B] hover:bg-[#133A5B] text-white font-bold text-[0.93rem] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 group"
+              >
+                <span>View Real Smile Gallery</span>
+                <span className="group-hover:translate-x-[3px] transition-transform duration-250 ease-out">→</span>
+              </a>
+            </div>
+
+          </div>
+
         </div>
 
-        <div className="max-w-[700px] mx-auto">
-          <div
-            ref={sliderRef}
-            className="compare-slider aspect-[16/9] select-none touch-none rounded-2xl overflow-hidden relative"
-            onPointerDown={onPointerDown}
-            onPointerMove={onPointerMove}
-            onPointerUp={onPointerUp}
-            style={{ boxShadow: '0 30px 80px -20px rgba(21,19,15,0.5)', cursor: 'ew-resize' }}
-          >
-            {/* After image (full width background) */}
-            <div className="absolute inset-0">
-              <img
-                src="/images/smile-compare.png"
-                alt="After smile design"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'right center' }}
-              />
-              <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-full text-xs font-bold text-white bg-black/50 backdrop-blur-sm uppercase tracking-wider">
-                After
-              </div>
-            </div>
-
-            {/* Before image (clipped to slider position) */}
-            <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-              <img
-                src="/images/smile-compare.png"
-                alt="Before smile design"
-                className="absolute inset-0 h-full object-cover"
-                style={{ width: `${10000 / pos}%`, objectPosition: 'left center', maxWidth: 'none' }}
-              />
-              {/* Sepia/yellow overlay for "before" look */}
-              <div className="absolute inset-0 bg-amber-900/30 mix-blend-multiply" />
-              <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold text-white bg-black/50 backdrop-blur-sm uppercase tracking-wider">
-                Before
-              </div>
-            </div>
-
-            {/* Slider handle */}
-            <div
-              className="absolute top-0 bottom-0 flex items-center justify-center pointer-events-none"
-              style={{ left: `${pos}%`, transform: 'translateX(-50%)' }}
-            >
-              <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-white shadow-[0_0_12px_rgba(255,255,255,0.9)]" />
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-[0_8px_25px_-6px_rgba(0,0,0,0.5)] border-2 border-white/80 z-10">
-                {/* Drag arrows SVG */}
-                <svg className="w-5 h-5 text-ink-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <p className="text-center text-ink-700 text-sm mt-5 max-w-[50ch] mx-auto">
-            Actual patient results — actual results vary by individual treatment plan. Drag the handle to compare.
-          </p>
-
-          {/* Book CTA under slider */}
-          <div className="mt-8 text-center">
-            <a
-              href="https://wa.me/918839557607"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-accent-400 to-accent-600 text-white font-bold text-[0.97rem] shadow-[0_14px_30px_-8px_rgba(91,79,224,0.5)] hover:-translate-y-1 transition-all duration-200"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="8.5"/>
-                <path d="M9 17c2.5 6 6.5 9.5 11 9.5" />
-                <path d="M9 14c1.5 3.5 4 5 6 5s4.5-1.5 6-5"/>
-                <circle cx="15" cy="10" r="1.5" fill="currentColor"/>
-                <circle cx="25" cy="10" r="1.5" fill="currentColor"/>
-              </svg>
-              Book a Smile Design Consultation
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
