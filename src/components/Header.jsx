@@ -4,11 +4,8 @@ import BrandLogo from './BrandLogo';
 const NAV_LINKS = [
   { label: 'Home', href: '#home', page: 'home' },
   { label: 'About', href: '#about', page: 'about' },
-  { label: 'Treatments', href: '#treatments', page: 'services' },
-  { label: 'Brochures', href: '#brochures', page: null },
   { label: 'Doctors', href: '#doctor', page: null },
-  { label: 'Gallery', href: '#gallery', page: null },
-  { label: 'Reviews', href: '#reviews', page: null },
+  { label: 'Treatments', href: '#treatments', page: 'services' },
   { label: 'Contact', href: '#booking', page: null },
 ];
 
@@ -69,29 +66,6 @@ const MOBILE_NAV_ITEMS = [
         <path d="M9 14h2" />
         <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
         <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Treatment Brochures (ब्रोशर)',
-    page: null,
-    href: '#brochures',
-    icon: (
-      <svg className="w-[22px] h-[22px] text-[#026592] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Smile Gallery & Reviews',
-    page: null,
-    href: '#gallery',
-    icon: (
-      <svg className="w-[22px] h-[22px] text-[#026592] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" />
-        <circle cx="8.5" cy="8.5" r="1.5" />
-        <polyline points="21 15 16 10 5 21" />
       </svg>
     ),
   },
