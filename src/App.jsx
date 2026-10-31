@@ -23,47 +23,51 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen font-body pb-16 md:pb-0 bg-[#F8FAFA] animate-page-fade-in">
-      <Header activePage={activePage} setActivePage={handleSetPage} />
+    <>
+      <div className="min-h-screen font-body pb-24 md:pb-0 bg-[#F8FAFA] animate-page-fade-in">
+        <Header activePage={activePage} setActivePage={handleSetPage} />
 
-      {/* ── HOME PAGE ─────────────────────────────────────────── */}
-      {activePage === 'home' && (
-        <>
-          <Hero setActivePage={handleSetPage} />
-          <DoctorTeaser setActivePage={handleSetPage} />
-          <WhyUs />
-          <BrochureCarousel />
-          <ServiceTeaser setActivePage={handleSetPage} />
-          <CompareSlider />
-          <SmileGallery />
-          <Technology />
-          <TrustBand />
-          <Location />
-          <Booking />
-        </>
-      )}
+        {/* ── HOME PAGE ─────────────────────────────────────────── */}
+        {activePage === 'home' && (
+          <>
+            <Hero setActivePage={handleSetPage} />
+            <DoctorTeaser setActivePage={handleSetPage} />
+            <WhyUs />
+            <BrochureCarousel />
+            <ServiceTeaser setActivePage={handleSetPage} />
+            <CompareSlider />
+            <SmileGallery />
+            <Technology />
+            <TrustBand />
+            <Location />
+            <Booking />
+          </>
+        )}
 
-      {/* ── SERVICES PAGE ─────────────────────────────────────── */}
-      {activePage === 'services' && (
-        <>
-          <ServicesPage />
-          <Location />
-          <Booking />
-        </>
-      )}
+        {/* ── SERVICES PAGE ─────────────────────────────────────── */}
+        {activePage === 'services' && (
+          <>
+            <ServicesPage />
+            <Location />
+            <Booking />
+          </>
+        )}
 
-      {/* ── ABOUT PAGE ────────────────────────────────────────── */}
-      {activePage === 'about' && (
-        <>
-          <AboutPage />
-          <Technology isAbout />
-          <Location />
-          <Booking />
-        </>
-      )}
+        {/* ── ABOUT PAGE ────────────────────────────────────────── */}
+        {activePage === 'about' && (
+          <>
+            <AboutPage />
+            <Technology isAbout />
+            <Location />
+            <Booking />
+          </>
+        )}
 
-      <Footer />
+        <Footer />
+      </div>
+
+      {/* ── Floating Action Bar & Mobile Sticky Bottom Bar (Outside animated wrapper for true viewport fixation) ── */}
       <FAB />
-    </div>
+    </>
   );
 }
