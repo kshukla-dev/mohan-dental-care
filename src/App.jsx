@@ -7,6 +7,7 @@ import CompareSlider from './components/CompareSlider';
 import SmileGallery from './components/SmileGallery';
 import { DoctorTeaser, AboutPage } from './components/Doctor';
 import Technology from './components/Technology';
+import BrochureCarousel from './components/BrochureCarousel';
 import TrustBand from './components/TrustBand';
 import Location from './components/Location';
 import Booking from './components/Booking';
@@ -35,6 +36,7 @@ export default function App() {
           <SmileGallery />
           <DoctorTeaser setActivePage={handleSetPage} />
           <Technology />
+          <BrochureCarousel />
           <TrustBand />
           <Location />
           <Booking />
