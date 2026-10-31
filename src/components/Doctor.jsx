@@ -25,7 +25,7 @@ function DoctorCard() {
         <div className="rounded-[18px] overflow-hidden aspect-[4/5] relative bg-gradient-to-b from-[#133A5B] to-[#03213B]">
           <img
             src={getAssetUrl('images/dr_p_r_rajwade.webp')}
-            alt="Dr. P. R. Rajwade"
+            alt="Dr. P. R. Rajwade - Dentist Surajpur"
             className="w-full h-full object-cover object-top"
           />
           {/* Gradient overlay at bottom for name */}
@@ -228,10 +228,10 @@ export function AboutPage() {
       <div className="bg-[#EEF1F1]/60 py-16 relative overflow-hidden border-b border-[#E5E8E8]">
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 relative">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4">
-            <img src={getAssetUrl('images/logo.webp')} alt="Logo" className="w-4 h-4 object-contain" />
+            <img src={getAssetUrl('images/logo.webp')} alt="Mohan Dental Care Surajpur Emblem" className="w-4 h-4 object-contain" />
             MEET THE DOCTOR &amp; CLINIC
           </div>
-          <h1 className="font-display font-bold text-[clamp(2rem,3.6vw,2.9rem)] text-[#03213B] mb-4">About Mohan Dental Care</h1>
+          <h2 className="font-display font-bold text-[clamp(2rem,3.6vw,2.9rem)] text-[#03213B] mb-4">About Mohan Dental Care</h2>
           <p className="text-[#66737F] text-[1.06rem] max-w-[60ch]">
             Led by Dr. P. R. Rajwade, the Surajpur clinic combines routine dental care with surgical,
             orthodontic and cosmetic treatment - all in one place on M.G. Road.
@@ -347,7 +347,7 @@ export function AboutPage() {
       </section>
 
       {/* Gallery section */}
-      <section id="gallery" className="py-14 sm:py-20 bg-[#E4E5E4]/50">
+      <section id="clinic-tour" className="py-14 sm:py-20 bg-[#E4E5E4]/50">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/15 text-accent-600 text-xs font-bold tracking-[0.08em] uppercase mb-5">
             Around The Clinic

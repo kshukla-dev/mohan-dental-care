@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Main Homepage -->
+  <!-- Main Canonical Clinic Homepage -->
   <url>
     <loc>https://avinash-1994.github.io/mohan-dental-care/</loc>
     <lastmod>2026-10-31</lastmod>
@@ -13,11 +13,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://avinash-1994.github.io/mohan-dental-care/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://avinash-1994.github.io/mohan-dental-care/" />
 
-    <!-- Clinic & Treatment Images for Google Image SEO -->
+    <!-- Google Image Search Optimization: High-Priority Visuals -->
     <image:image>
       <image:loc>https://avinash-1994.github.io/mohan-dental-care/images/mohan-logo-user-clean.webp</image:loc>
       <image:title>मोहन डेंटल केयर सूरजपुर - आधिकारिक लोगो (Mohan Dental Care Surajpur Official Emblem)</image:title>
-      <image:caption>Mohan Dental Care Surajpur - Best Dentist &amp; Implant Center in Surajpur and Ambikapur led by Dr. P. R. Rajwade</image:caption>
+      <image:caption>Mohan Dental Care Surajpur - Best Dental Clinic &amp; Implant Center in Surajpur and Ambikapur led by Dr. P. R. Rajwade</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://avinash-1994.github.io/mohan-dental-care/images/hero-desktop.webp</image:loc>
@@ -30,6 +30,11 @@
       <image:caption>Dr. P. R. Rajwade, BDS - Government Dental College Raipur, Chief Dental Surgeon at Mohan Dental Care</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://avinash-1994.github.io/mohan-dental-care/images/office.webp</image:loc>
+      <image:title>Mohan Dental Care Clinic Front &amp; Reception Surajpur</image:title>
+      <image:caption>Conveniently located on M.G. Road opposite Bajaj Showroom, Surajpur Chhattisgarh</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://avinash-1994.github.io/mohan-dental-care/images/treatment.webp</image:loc>
       <image:title>Painless Root Canal &amp; Modern Dental Operatory Surajpur</image:title>
       <image:caption>Rotary endodontics and comfortable dental chairside treatment in Surajpur</image:caption>
@@ -39,63 +44,6 @@
       <image:title>Smile Transformation &amp; Aesthetic Dentistry Results Surajpur</image:title>
       <image:caption>Natural aesthetic smile makeover with Zirconia ceramic crowns and veneers</image:caption>
     </image:image>
-  </url>
-
-  <!-- Deep Section Anchors for Targeted Search Crawling -->
-  <url>
-    <loc>https://avinash-1994.github.io/mohan-dental-care/#treatments</loc>
-    <lastmod>2026-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://avinash-1994.github.io/mohan-dental-care/#doctor</loc>
-    <lastmod>2026-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://avinash-1994.github.io/mohan-dental-care/#brochures</loc>
-    <lastmod>2026-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://avinash-1994.github.io/mohan-dental-care/#before-after</loc>
-    <lastmod>2026-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://avinash-1994.github.io/mohan-dental-care/#gallery</loc>
-    <lastmod>2026-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://avinash-1994.github.io/mohan-dental-care/#technology</loc>
-    <lastmod>2026-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://avinash-1994.github.io/mohan-dental-care/#location</loc>
-    <lastmod>2026-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://avinash-1994.github.io/mohan-dental-care/#booking</loc>
-    <lastmod>2026-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
   </url>
 
 </urlset>

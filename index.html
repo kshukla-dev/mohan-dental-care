@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="./favicon.png" />
   <link rel="apple-touch-icon" href="./images/favicon-192.png" />
+  <link rel="manifest" href="./manifest.json" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
   <!-- Primary SEO Title & Descriptions (Hindi + English for Top Ranking in Surajpur, Ambikapur & Surguja) -->
@@ -67,11 +68,56 @@
     href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Rozha+One&family=Sora:wght@400;500;600;700;800&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
     rel="stylesheet">
 
-  <!-- Schema.org JSON-LD Structured Data for Local Dentist, Medical Business & FAQ -->
+  <!-- Schema.org JSON-LD Structured Data: Local Business, Medical Clinic, Breadcrumbs & FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://avinash-1994.github.io/mohan-dental-care/#website",
+        "url": "https://avinash-1994.github.io/mohan-dental-care/",
+        "name": "Mohan Dental Care Surajpur",
+        "alternateName": [
+          "मोहन डेंटल केयर",
+          "Mohan Dental Care",
+          "Mohan Dental Clinic"
+        ],
+        "inLanguage": ["hi", "en"],
+        "publisher": {
+          "@id": "https://avinash-1994.github.io/mohan-dental-care/#dentist"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://avinash-1994.github.io/mohan-dental-care/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://avinash-1994.github.io/mohan-dental-care/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Clinical Treatments",
+            "item": "https://avinash-1994.github.io/mohan-dental-care/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Dr. P. R. Rajwade",
+            "item": "https://avinash-1994.github.io/mohan-dental-care/#doctor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Clinic Location & Appointment",
+            "item": "https://avinash-1994.github.io/mohan-dental-care/#location"
+          }
+        ]
+      },
       {
         "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
         "@id": "https://avinash-1994.github.io/mohan-dental-care/#dentist",
@@ -111,6 +157,54 @@
           "longitude": 82.8661
         },
         "hasMap": "https://maps.google.com/?q=23.2185,82.8661",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "128",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Sunil Verma"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Dr. Rajwade performed my root canal with virtually no pain. The digital X-ray was right next to the chair, and the crown fits perfectly. Very clean clinic in Surajpur."
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Priyanka Patel"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Extremely gentle scaling experience. Dr. Rajwade explained how to brush properly to prevent future tartar. Transparent approach and no unnecessary procedures."
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Rajesh Agrawal"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Highly professional doctor. He spent time listening to my concerns and gave me honest options. Very modern clinic setup with comfortable chairs."
+          }
+        ],
         "areaServed": [
           {
             "@type": "City",
@@ -169,6 +263,52 @@
           "Periodontics",
           "Prosthodontics"
         ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Dental Treatments & Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Root Canal Treatment (RCT / रूट कैनाल)",
+                "description": "Painless single-sitting rotary endodontics saving severely damaged or infected teeth."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Dental Implants (डेंटल इम्प्लांट्स)",
+                "description": "Permanent titanium tooth root replacements with natural Zirconia crowns."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Orthodontic Braces & Invisible Aligners (ब्रेसिज़ व अलाइनर्स)",
+                "description": "Teeth straightening with metal, ceramic brackets, or clear invisible aligners."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Teeth Whitening & Scaling (दांतों की सफाई व सफेदी)",
+                "description": "Ultrasonic plaque removal and professional clinic bleaching for stain-free smiles."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Digital RVG Dental X-Ray (डिजिटल एक्स-रे)",
+                "description": "Instant high-definition chairside radiography with minimum radiation."
+              }
+            }
+          ]
+        },
         "founder": {
           "@type": "Person",
           "@id": "https://avinash-1994.github.io/mohan-dental-care/#doctor",

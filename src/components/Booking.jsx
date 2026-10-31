@@ -138,7 +138,7 @@ export default function Booking() {
             className={`lg:col-span-5 transition-all duration-700 ${leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4">
-              <img src={getAssetUrl('images/logo.webp')} alt="Logo" className="w-4 h-4 object-contain" />
+              <img src={getAssetUrl('images/logo.webp')} alt="Mohan Dental Care Surajpur Emblem" className="w-4 h-4 object-contain" />
               APPOINTMENT &amp; ENQUIRY
             </div>
 

@@ -51,7 +51,7 @@ export default function Hero({ _setActivePage }) {
       <div className="relative w-full h-[275px] sm:h-[330px] lg:hidden overflow-hidden bg-slate-100">
         <img
           src={getAssetUrl('images/hero-desktop.webp')}
-          alt="Mohan Dental Care Clinic"
+          alt="Mohan Dental Care Clinic Surajpur"
           className="w-full h-full object-cover object-[center_20%]"
         />
         {/* Pagination indicator dots */}
@@ -65,7 +65,7 @@ export default function Hero({ _setActivePage }) {
       {/* ── DESKTOP: Background image & subtle contrast gradient ── */}
       <img
         src={getAssetUrl('images/hero-desktop.webp')}
-        alt="Mohan Dental Care Clinic"
+        alt="Mohan Dental Care Modern Operatory Surajpur"
         className="absolute inset-0 w-full h-full object-cover object-[center_35%] hidden lg:block pointer-events-none"
         style={{ zIndex: 0 }}
       />
@@ -98,6 +98,7 @@ export default function Hero({ _setActivePage }) {
 
           {/* Headline */}
           <h1 className="font-display font-black leading-[1.12] mb-2 sm:mb-2.5 text-[clamp(1.65rem,2.8vw,2.2rem)] text-[#0b2545] tracking-tight">
+            <span className="sr-only">Mohan Dental Care Surajpur - Best Dentist in Surajpur &amp; Ambikapur | </span>
             Healthy Teeth.<br />
             <span className="text-[#0284c7]">Confident Smiles.</span>
           </h1>
@@ -112,7 +113,7 @@ export default function Hero({ _setActivePage }) {
             <div className="w-12 h-12 sm:w-[52px] sm:h-[52px] rounded-full overflow-hidden flex-shrink-0 ring-2 ring-[#0284c7]/25 bg-slate-100 shadow-sm">
               <img
                 src={getAssetUrl('images/dr_p_r_rajwade.webp')}
-                alt="Dr. P.R. Rajwade"
+                alt="Dr. P. R. Rajwade - Chief Dental Surgeon at Mohan Dental Care Surajpur"
                 className="w-full h-full object-contain scale-[2.7] origin-[54%_22%]"
               />
             </div>

@@ -447,7 +447,7 @@ export function ServicesPage() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4">
             SPECIALISED CLINICAL CARE
           </div>
-          <h1 className="font-display font-bold text-[clamp(1.85rem,3.4vw,2.7rem)] text-[#03213B] mb-3">Our 12 Clinical Services</h1>
+          <h2 className="font-display font-bold text-[clamp(1.85rem,3.4vw,2.7rem)] text-[#03213B] mb-3">Our 12 Clinical Services</h2>
           <p className="text-[#66737F] text-[0.98rem] sm:text-[1.05rem] max-w-[58ch] mb-8">
             Complete oral care at one address on M.G. Road, Surajpur. Tap any card for full clinical details, treatment steps, aftercare, and patient FAQs.
           </p>
