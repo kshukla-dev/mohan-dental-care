@@ -1,5 +1,4 @@
 import BrandLogo from './BrandLogo';
-import { getAssetUrl } from '../utils';
 
 export default function Footer() {
   const year = new Date().getFullYear();
