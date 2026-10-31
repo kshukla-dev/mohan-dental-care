@@ -117,7 +117,6 @@ export default function CompareSlider() {
             <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4 transition-all duration-500 ease-out ${
               visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
             }`}>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#123b5d]" />
               SMILE TRANSFORMATION
             </div>
 

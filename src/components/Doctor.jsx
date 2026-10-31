@@ -101,7 +101,6 @@ export function DoctorTeaser({ setActivePage }) {
             {/* Subtle floating badge */}
             <div className={`absolute -bottom-4 right-4 bg-white rounded-full px-4 py-2 shadow-card border border-[#E5E8E8] flex items-center gap-2 text-xs font-bold text-[#03213B] transition-all duration-500 delay-300 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
               }`}>
-              <span className="w-2 h-2 rounded-full bg-[#123b5d]" />
               CGDC Reg. 23/3989
             </div>
           </div>
@@ -111,7 +110,6 @@ export function DoctorTeaser({ setActivePage }) {
         <div className="lg:col-span-7 text-left">
           <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4 transition-all duration-500 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
             }`}>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#123b5d]" />
             DEDICATED CLINICAL LEADERSHIP
           </div>
 
@@ -168,7 +166,6 @@ export function DoctorTeaser({ setActivePage }) {
           <div className={`mb-8 p-4 sm:p-5 rounded-2xl bg-white border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.04)] transition-all duration-600 delay-300 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}>
             <h4 className="font-display font-bold text-xs uppercase tracking-wider text-[#03213B] mb-3 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#123b5d]" />
               Clinical &amp; Hospital Background
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -288,7 +285,6 @@ export function AboutPage() {
             {/* Prior Clinical & Hospital Experience */}
             <div className="mt-8 mb-8 p-6 rounded-2xl bg-white border border-[#E5E8E8] shadow-sm">
               <h3 className="font-display font-bold text-sm uppercase tracking-wider text-[#03213B] mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#123b5d]" />
                 Professional &amp; Hospital Experience
               </h3>
               <div className="space-y-3">
@@ -354,7 +350,6 @@ export function AboutPage() {
       <section id="gallery" className="py-14 sm:py-20 bg-[#E4E5E4]/50">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/15 text-accent-600 text-xs font-bold tracking-[0.08em] uppercase mb-5">
-            <span className="w-2 h-2 rounded-full bg-accent-500" />
             Around The Clinic
           </div>
           <h2 className="font-display font-bold text-[clamp(1.7rem,2.8vw,2.2rem)] text-ink-950 mb-4">Gallery</h2>
@@ -387,7 +382,6 @@ export function AboutPage() {
       <section className="py-14 sm:py-20 bg-[#FBFDFD]">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/15 text-accent-600 text-xs font-bold tracking-[0.08em] uppercase mb-5">
-            <span className="w-2 h-2 rounded-full bg-accent-500" />
             Our Approach
           </div>
           <h2 className="font-display font-bold text-[clamp(1.7rem,2.8vw,2.2rem)] text-ink-950 mb-10">What Makes Us Different</h2>

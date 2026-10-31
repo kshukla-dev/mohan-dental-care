@@ -58,7 +58,6 @@ export default function Technology({ _isAbout = false }) {
           className="text-center max-w-[640px] mx-auto mb-12 sm:mb-16"
         >
           <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4 transition-all duration-500 ease-out ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#123b5d]" />
             CLINICAL EXCELLENCE
           </div>
           <h2 className={`font-display font-bold text-[clamp(1.85rem,3.2vw,2.5rem)] text-[#03213B] leading-tight mb-3 transition-all duration-600 delay-100 ease-out ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>

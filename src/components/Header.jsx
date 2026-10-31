@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAssetUrl } from '../utils';
+import BrandLogo from './BrandLogo';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home', page: 'home' },
@@ -159,12 +159,12 @@ export default function Header({ activePage, setActivePage }) {
       >
         <div className="max-w-[1360px] mx-auto px-4 sm:px-6 h-[72px] sm:h-[76px] flex items-center justify-between gap-3 sm:gap-5">
           {/* Brand Logo */}
-          <button onClick={() => handleNavClick('home', '#home')} className="flex items-center gap-2 group py-1">
-            <img
-              src={getAssetUrl('images/logo.webp')}
-              alt="Mohan Dental Care"
-              className="h-10 sm:h-12 max-h-[50px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.01]"
-            />
+          <button
+            onClick={() => handleNavClick('home', '#home')}
+            className="group py-1 focus:outline-none"
+            aria-label="मोहन डेंटल केयर सूरजपुर - Mohan Dental Care"
+          >
+            <BrandLogo />
           </button>
 
           {/* Desktop Nav */}
@@ -244,13 +244,13 @@ export default function Header({ activePage, setActivePage }) {
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#E5E8E8]">
-          <div className="flex items-center">
-            <img
-              src={getAssetUrl('images/logo.webp')}
-              alt="Mohan Dental Care"
-              className="h-10 sm:h-11 w-auto object-contain"
-            />
-          </div>
+          <button
+            onClick={() => handleNavClick('home', '#home')}
+            className="group focus:outline-none"
+            aria-label="मोहन डेंटल केयर सूरजपुर - Mohan Dental Care"
+          >
+            <BrandLogo size="compact" />
+          </button>
           <button
             onClick={() => setMenuOpen(false)}
             aria-label="Close navigation menu"

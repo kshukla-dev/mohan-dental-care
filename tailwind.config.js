@@ -18,6 +18,7 @@ export default {
       fontFamily: {
         display: ['Sora', 'system-ui', 'sans-serif'],
         body: ['Hind', 'system-ui', 'sans-serif'],
+        hindi: ['"Rozha One"', '"Tiro Devanagari Hindi"', 'Hind', 'serif'],
       },
       colors: {
         navy: {

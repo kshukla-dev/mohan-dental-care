@@ -12,6 +12,7 @@ export default function Location() {
     {
       title: 'Clinic Address',
       desc: 'M.G. Road, opposite Bajaj Showroom, Surajpur, Chhattisgarh - 497229',
+      hindiDesc: 'एम.जी. रोड, बजाज शोरूम के सामने, सूरजपुर, छत्तीसगढ़ - 497229',
       icon: (
         <svg className="w-5 h-5 text-[#123b5d]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 21s7-6.3 7-11.5S16.4 3 12 3 5 5.4 5 9.5 12 21 12 21z" />
@@ -47,18 +48,20 @@ export default function Location() {
         {/* Left info */}
         <div ref={leftRef} className={`transition-all duration-700 ${leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8F1F8] border border-[#123b5d]/20 text-[#123b5d] text-xs font-bold tracking-[0.08em] uppercase mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#123b5d]" />
             FIND OUR CLINIC
           </div>
           <h2 className="font-display font-bold text-[clamp(1.85rem,3.2vw,2.5rem)] text-[#03213B] leading-tight mb-3">
             Visit Mohan Dental Care
           </h2>
-          <p className="text-[#66737F] text-[1.02rem] mb-8">
+          <p className="text-[#66737F] text-[1.02rem] mb-1.5">
             Centrally located on M.G. Road opposite the Bajaj Showroom, with easy parking and immediate road access.
+          </p>
+          <p className="font-hindi text-[0.95rem] text-[#03213B]/80 font-medium mb-8">
+            सूरजपुर में एम.जी. रोड पर बजाज शोरूम के सामने, सुविधाजनक पार्किंग व मुख्य मार्ग पर स्थित।
           </p>
 
           <div className="flex flex-col divide-y divide-[#E5E8E8] mb-8">
-            {INFO.map(({ title, desc, icon }) => (
+            {INFO.map(({ title, desc, hindiDesc, icon }) => (
               <div key={title} className="flex gap-4 items-start py-4">
                 <div className="w-10 h-10 rounded-xl bg-[#E8F1F8] flex items-center justify-center flex-shrink-0 mt-0.5">
                   {icon}
@@ -66,6 +69,11 @@ export default function Location() {
                 <div>
                   <h4 className="font-bold text-[0.96rem] text-[#03213B] mb-1">{title}</h4>
                   <p className="text-[#66737F] text-[0.92rem] leading-relaxed">{desc}</p>
+                  {hindiDesc && (
+                    <p className="font-hindi text-[0.93rem] text-[#03213B] font-semibold leading-relaxed mt-1">
+                      {hindiDesc}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}

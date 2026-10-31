@@ -1,3 +1,4 @@
+import BrandLogo from './BrandLogo';
 import { getAssetUrl } from '../utils';
 
 export default function Footer() {
@@ -12,12 +13,8 @@ export default function Footer() {
 
           {/* Col 1: Brand (4 cols) */}
           <div className="lg:col-span-4">
-            <div className="mb-5 inline-block bg-white p-3 rounded-2xl shadow-sm border border-[#E5E8E8]">
-              <img
-                src={getAssetUrl('images/logo.webp')}
-                alt="Mohan Dental Care"
-                className="h-11 w-auto object-contain"
-              />
+            <div className="mb-5 inline-block bg-white px-4 py-3 rounded-2xl shadow-sm border border-[#E5E8E8]">
+              <BrandLogo />
             </div>
             <p className="text-sm text-[#EEF1F1]/70 leading-relaxed max-w-[34ch] mb-4">
               Modern dental studio and family dental healthcare practice in Surajpur, under the clinical leadership of <strong className="text-white">Dr. P. R. Rajwade</strong>.
@@ -84,7 +81,12 @@ export default function Footer() {
               Contact &amp; Hours
             </h5>
             <div className="space-y-3 text-sm text-[#EEF1F1]/70">
-              <p>M.G. Road, opposite Bajaj Showroom, Surajpur, Chhattisgarh - 497229</p>
+              <div className="space-y-1">
+                <p>M.G. Road, opposite Bajaj Showroom, Surajpur, Chhattisgarh - 497229</p>
+                <p className="font-hindi text-xs sm:text-[0.84rem] text-[#BFA88F] font-medium leading-relaxed">
+                  एम.जी. रोड, बजाज शोरूम के सामने, सूरजपुर, छत्तीसगढ़ - 497229
+                </p>
+              </div>
               <p className="text-white font-bold">
                 <a href="tel:+918839557607" className="hover:text-teal-400 transition-colors">
                   +91 88395 57607
