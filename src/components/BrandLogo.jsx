@@ -17,8 +17,8 @@ export default function BrandLogo({ showIcon = true, size = 'default', variant =
           src={getAssetUrl('images/mohan-logo-user-clean.webp')}
           alt="मोहन डेंटल केयर सूरजपुर - प्रतीक चिन्ह"
           className={`shrink-0 object-contain transition-transform duration-200 group-hover:scale-105 filter drop-shadow-[0_2px_4px_rgba(3,33,59,0.12)] ${isCompact
-              ? 'h-8 sm:h-9 w-auto max-w-[46px] sm:max-w-[52px]'
-              : 'h-10 sm:h-11 lg:h-12 w-auto max-w-[54px] sm:max-w-[62px] lg:max-w-[68px]'
+            ? 'h-8 sm:h-9 w-auto max-w-[46px] sm:max-w-[52px]'
+            : 'h-10 sm:h-11 lg:h-12 w-auto max-w-[54px] sm:max-w-[62px] lg:max-w-[68px]'
             }`}
         />
       )}
