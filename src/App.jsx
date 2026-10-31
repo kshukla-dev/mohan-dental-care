@@ -30,13 +30,13 @@ export default function App() {
       {activePage === 'home' && (
         <>
           <Hero setActivePage={handleSetPage} />
+          <DoctorTeaser setActivePage={handleSetPage} />
           <WhyUs />
+          <BrochureCarousel />
           <ServiceTeaser setActivePage={handleSetPage} />
           <CompareSlider />
           <SmileGallery />
-          <DoctorTeaser setActivePage={handleSetPage} />
           <Technology />
-          <BrochureCarousel />
           <TrustBand />
           <Location />
           <Booking />
