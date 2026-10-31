@@ -189,12 +189,18 @@ export default function SmileGallery() {
         </div>
 
         {/* Dots nav */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center items-center gap-2 mt-8 dot-nav">
           {GALLERY_CASES.map((_, i) => (
             <button
               key={i}
+              type="button"
               onClick={() => setActiveCase(i)}
-              className={`rounded-full transition-all duration-300 ${activeCase === i ? 'w-7 h-2.5 bg-[#03213B]' : 'w-2.5 h-2.5 bg-[#E5E8E8] hover:bg-[#123b5d]/40'}`}
+              style={{ minHeight: 'unset', minWidth: 'unset', padding: 0 }}
+              className={`pagination-dot rounded-full transition-all duration-300 border-0 focus:outline-none cursor-pointer ${
+                activeCase === i
+                  ? 'w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#03213B] ring-2 ring-[#03213B]/25 scale-110'
+                  : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[#CBD5E1] hover:bg-[#94A3B8]'
+              }`}
               aria-label={`Case ${i + 1}`}
             />
           ))}

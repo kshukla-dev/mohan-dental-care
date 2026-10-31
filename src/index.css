@@ -59,6 +59,16 @@
     min-height: unset;
     display: inline;
   }
+
+  /* Remove forced min-height from carousel/gallery pagination dots */
+  button.pagination-dot,
+  .pagination-dots button,
+  .dot-nav button {
+    min-height: unset !important;
+    min-width: unset !important;
+    padding: 0 !important;
+    display: inline-block !important;
+  }
 }
 
 @layer utilities {

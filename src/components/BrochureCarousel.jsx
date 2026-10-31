@@ -355,18 +355,19 @@ export default function BrochureCarousel() {
           </div>
 
           {/* Clean Round Circular Dots Pagination */}
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-5 px-4 flex-wrap max-w-xl">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-5 px-4 flex-wrap max-w-xl pagination-dots">
             {BROCHURES.map((_, dotIdx) => {
               const isActive = current === dotIdx;
               return (
                 <button
                   key={dotIdx}
+                  type="button"
                   onClick={() => goToSlide(dotIdx)}
                   style={{ minHeight: 'unset', minWidth: 'unset', padding: 0 }}
-                  className={`transition-all duration-300 rounded-full border-0 focus:outline-none ${
+                  className={`pagination-dot transition-all duration-300 rounded-full border-0 focus:outline-none cursor-pointer ${
                     isActive
-                      ? 'w-5 sm:w-6 h-2 sm:h-2.5 bg-[#0284c7] shadow-sm'
-                      : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[#D5CFC3] hover:bg-[#A89E90]'
+                      ? 'w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#0284c7] ring-2 ring-[#0284c7]/30 scale-125'
+                      : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[#CBD5E1] hover:bg-[#94A3B8]'
                   }`}
                   aria-label={`Go to brochure ${dotIdx + 1}`}
                 />
