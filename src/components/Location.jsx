@@ -84,12 +84,11 @@ export default function Location() {
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#03213B] hover:bg-[#133A5B] text-white font-bold text-[0.92rem] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#03213B] hover:bg-[#133A5B] text-white font-bold text-[0.92rem] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 shadow-sm"
             >
-              <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="6" cy="6" r="2.3" />
-                <circle cx="18" cy="18" r="2.3" />
-                <path d="M6 8.3v3.2a4 4 0 0 0 4 4h4a4 4 0 0 1 4 4" />
+              <svg className="w-4 h-4 text-[#38bdf8] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
               </svg>
               <span>Get Directions</span>
             </a>
