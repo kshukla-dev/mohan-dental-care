@@ -167,14 +167,14 @@ export default function CompareSlider() {
               visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
             }`}>
               <a
-                href="#booking"
+                href="#gallery"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#03213B] hover:bg-[#133A5B] text-white font-bold text-[0.93rem] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 group"
               >
-                <span>Explore Smile Cases</span>
+                <span>View Real Smile Gallery</span>
                 <span className="group-hover:translate-x-[3px] transition-transform duration-250 ease-out">→</span>
               </a>
             </div>

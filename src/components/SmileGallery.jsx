@@ -223,12 +223,14 @@ export default function SmileGallery() {
             </div>
           </div>
           <a
-            href="https://www.mohandentalclinic.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#03213B] text-[#03213B] hover:bg-[#03213B] hover:text-white font-bold text-[0.88rem] transition-all duration-200 whitespace-nowrap"
+            href="#booking"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#03213B] hover:bg-[#133A5B] text-white font-bold text-[0.88rem] transition-all duration-200 whitespace-nowrap shadow-sm"
           >
-            View More Cases →
+            Book Consultation →
           </a>
         </div>
 

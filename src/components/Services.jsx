@@ -365,17 +365,9 @@ const FEATURED_TREATMENTS = [
 // ──────────────────────────────────────────────────────────────────────────────
 export function ServiceTeaser({ setActivePage }) {
   const [headRef, headVisible] = useScrollReveal();
-  const [selected, setSelected] = useState(null);
-
-  const handleOpenTreatment = (treatment) => {
-    const found = ALL_SERVICES.find(s => s.id === treatment.matchId) || ALL_SERVICES[0];
-    setSelected(found);
-  };
 
   return (
     <section id="treatments" className="py-16 sm:py-24 bg-[#F8FAFA]">
-      {selected && <ServiceModal svc={selected} onClose={() => setSelected(null)} />}
-
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
 
         {/* Header */}
@@ -394,13 +386,12 @@ export function ServiceTeaser({ setActivePage }) {
           </p>
         </div>
 
-        {/* 6 Clean Cards Grid */}
+        {/* 6 Clean Informational Cards Grid (No dead clicks) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {FEATURED_TREATMENTS.map((item, i) => (
             <div
               key={item.id}
-              onClick={() => handleOpenTreatment(item)}
-              className={`bg-white rounded-2xl p-7 sm:p-8 border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.05)] hover:shadow-[0_14px_30px_-10px_rgba(3,33,59,0.1)] hover:-translate-y-1 hover:border-[#123b5d]/40 transition-all duration-300 ease-out flex flex-col justify-between cursor-pointer group active:scale-[0.99] ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              className={`bg-white rounded-2xl p-7 sm:p-8 border border-[#E5E8E8] shadow-[0_4px_20px_-6px_rgba(3,33,59,0.05)] hover:shadow-[0_12px_28px_-8px_rgba(3,33,59,0.09)] hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col justify-between group ${headVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
               style={{ transitionDelay: headVisible ? `${100 + (i % 3) * 100}ms` : '0ms' }}
             >
@@ -408,17 +399,12 @@ export function ServiceTeaser({ setActivePage }) {
                 <div className="w-12 h-12 rounded-xl bg-[#E8F1F8] flex items-center justify-center mb-6 transition-transform duration-250 ease-out group-hover:scale-105">
                   {item.icon}
                 </div>
-                <h3 className="font-display font-bold text-[1.15rem] text-[#03213B] mb-2 group-hover:text-[#123b5d] transition-colors">
+                <h3 className="font-display font-bold text-[1.15rem] text-[#03213B] mb-2 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-[#66737F] text-[0.93rem] leading-relaxed mb-6">
+                <p className="text-[#66737F] text-[0.93rem] leading-relaxed">
                   {item.desc}
                 </p>
-              </div>
-
-              <div className="inline-flex items-center gap-1.5 text-[#123b5d] text-sm font-bold pt-4 border-t border-[#E5E8E8]/70">
-                <span>Explore Treatment</span>
-                <span className="group-hover:translate-x-[3px] transition-transform duration-250 ease-out">→</span>
               </div>
             </div>
           ))}
